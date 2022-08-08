@@ -1,0 +1,21 @@
+
+<script type="text/javascript">
+
+    let ws = void 0;
+    let distributeur = (ws) ? ws.reseau : "CA";
+    let typeCharte = (ws) ? ws.typeCharte : "V";
+    let reseau = "CA";
+    if (typeCharte === "V" && distributeur === "CA") { reseau = "CA"}
+    if (typeCharte === "R" && distributeur === "CA") { reseau = "BP"}
+    if (typeCharte === "N" && distributeur === "CA") { reseau = "CH"}
+    if (typeCharte === "B" && distributeur === "CA") { reseau = "EN"}
+    if (typeCharte === "T" && distributeur === "CA") { reseau = "SP"}
+    if (distributeur === "CL") { reseau = "LCL"}
+
+    var link = document.createElement('link');
+    link.id = 'css-' + reseau;
+    link.rel = 'stylesheet';
+    link.href = 'assets/stylesheets/esesame.' + reseau + '.css';
+    document.head.appendChild(link);
+
+</script>

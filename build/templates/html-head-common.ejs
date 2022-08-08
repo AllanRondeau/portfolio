@@ -1,0 +1,28 @@
+[%#
+
+    Common META Tags and basic html related tags.
+
+    Params
+
+%]
+
+<meta charset="UTF-8">
+<base href="/">
+<meta http-equiv="x-ua-compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[%= title %]</title>
+
+<script type="text/javascript">
+[%#
+    Those vars values are set by index-html-transform.ts
+%]
+    // The following vars will be available in your js / ts in global object : window.APP_VERSION for example.
+    const APP_VERSION = "[%= APP_VERSION %]";
+    const BUILD_DATE = "[%= BUILD_DATE %]";
+    const LOG_LEVEL = "[%= LOG_LEVEL %]";
+    const ENV_ID = "[%= ENV_ID %]";
+
+    console.info("Application version :", APP_VERSION);
+    console.info("Built at :", BUILD_DATE);
+    console.info("Env :", ENV_ID);
+</script>
