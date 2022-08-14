@@ -1,6 +1,8 @@
-import {NgModule} from "@angular/core";
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
 import {AppComponent} from "./app.component";
+import {HomeSectionComponent} from "./home/homeSection";
+
 
 
 @NgModule({
@@ -8,11 +10,15 @@ import {AppComponent} from "./app.component";
         BrowserModule,
     ],
     declarations: [
-        AppComponent
+        AppComponent,
+        HomeSectionComponent
     ],
     providers: [],
     bootstrap: [
-        AppComponent
+        AppComponent,
+    ],
+    schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
     ]
 })
 

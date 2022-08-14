@@ -1,0 +1,5 @@
+/*adjust the font size:  10% of $size * 10% of screen lenght*/
+@function font-size-adjust($size){
+  $result: $size*($font-size);
+  @return $result;
+}

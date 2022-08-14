@@ -1,12 +1,11 @@
 import {environment} from "./environments/environment";
 import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
-import {AppModule} from "./ui/homePage/App.module";
+import {AppModule} from "./ui/app.module";
 import {enableProdMode} from "@angular/core";
 
 if (environment.production) {
     enableProdMode();
 }
-
 //
 // This will wait for all resources to load before bootstraping angular (scripts AND css).
 // This will prevent some FOUC (text with no style).

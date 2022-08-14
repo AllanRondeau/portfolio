@@ -1,0 +1,13 @@
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+} /*declare screen zone*/
+
+body {
+  margin: 0;
+} /*remove default margin*/
+
+fieldset {
+  border: none;
+}/*remove default border on fieldset*/

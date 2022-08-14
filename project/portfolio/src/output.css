@@ -1,0 +1,101 @@
+/*10% of font size * 10% of the screen lenght*/
+/*Important color*/
+/*Responsive*/
+/*adjust the font size:  10% of $size * 10% of screen lenght*/
+select {
+  width: fit-content;
+  border: none;
+  border-bottom: #2AD587 2px solid;
+  height: 5vh;
+}
+
+select {
+  cursor: pointer;
+}
+
+body {
+  font-family: "lato", sans-serif;
+}
+
+select, input {
+  font-size: 1.1vw;
+}
+
+p {
+  font-size: 0.8vw;
+  color: red;
+}
+
+article button {
+  font-size: 1.5vw;
+}
+
+@media (max-width: 992px) {
+  h1 {
+    font-size: 3.6vw;
+  }
+  select, input {
+    font-size: 2.1vw;
+  }
+  article button {
+    font-size: 1.7vw;
+  }
+  p {
+    font-size: 1.2vw;
+  }
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3.5vw;
+  }
+  select, input {
+    font-size: 2vw;
+  }
+  article button {
+    font-size: 2vw;
+  }
+  p {
+    font-size: 1.5vw;
+  }
+}
+.hookError {
+  display: none;
+}
+
+@media (max-width: 560px) {
+  select, input {
+    font-size: 2.5vw;
+  }
+  h1 {
+    font-size: 4vw;
+  }
+  article button {
+    font-size: 2.5vw;
+  }
+  p {
+    font-size: 1.8vw;
+  }
+}
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+} /*declare screen zone*/
+body {
+  margin: 0;
+} /*remove default margin*/
+fieldset {
+  border: none;
+} /*remove default border on fieldset*/
+hr {
+  width: 10vw;
+  height: 2px;
+  background-color: #72E3AF;
+  margin-bottom: 2vh;
+}
+
+body {
+  transition: 0.5s all;
+}
+
+/*# sourceMappingURL=output.css.map */

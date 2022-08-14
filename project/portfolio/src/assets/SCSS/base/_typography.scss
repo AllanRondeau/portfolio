@@ -1,0 +1,71 @@
+body {
+  font-family: $font-lato;
+}
+
+h1 {
+}
+
+select, input {
+  font-size: font-size-adjust(11);
+
+}
+
+p{
+  font-size: font-size-adjust(8);
+  color: red;
+}
+
+
+article button{
+  font-size: font-size-adjust(15);
+}
+@media(max-width: $md-screen){
+  h1{
+    font-size: font-size-adjust(36);
+  }
+  select, input{
+    font-size: font-size-adjust(21);
+  }
+
+  article button{
+    font-size: font-size-adjust(17);
+  }
+  p{
+    font-size: font-size-adjust(12);
+  }
+}
+
+@media(max-width: $sm-screen){
+  h1{
+    font-size: font-size-adjust(35);
+  }
+  select, input{
+    font-size: font-size-adjust(20);
+  }
+
+  article button{
+    font-size: font-size-adjust(20);
+  }
+  p{
+    font-size: font-size-adjust(15);
+  }
+}
+.hookError{
+  display: none;
+}
+
+@media(max-width: $xs-screen) {
+  select, input{
+    font-size: font-size-adjust(25);
+  }
+  h1{
+    font-size: font-size-adjust(40);
+  }
+  article button{
+    font-size: font-size-adjust(25);
+  }
+  p{
+    font-size: font-size-adjust(18);
+  }
+}
+
