@@ -1,0 +1,47 @@
+#home {
+  width: 100vw;
+  height: 100vh;
+  @extend %displayFlexRow;
+
+
+  article:first-child {
+    padding-top: 20vh;
+    padding-left: 5vw;
+    width: 60vw;
+    flex-basis: 60vw;
+
+    header {
+      margin-left: 4vw;
+      margin-bottom: 15vh;
+    }
+
+    h4 {
+      margin-left: 10vw;
+    }
+
+    form {
+      margin-top: 12vh;
+      margin-left: 10vw;
+
+      button{
+        margin: 0 2.5vw;
+        padding: 1vw;
+      }
+    }
+    a{
+      margin-top: 12vh;
+      display: inline-block;
+    }
+
+  }
+  article:last-child{
+    flex-basis: 50vw;
+  }
+
+  figure{
+    height: 100vh;
+    @include bgImage("../images/DevIconHomePage.jpg", 35vw);
+    background-position: center;
+  }
+
+}

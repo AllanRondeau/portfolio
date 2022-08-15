@@ -1,8 +1,18 @@
 body {
-  font-family: $font-lato;
+  font-family: $font-roboto;
 }
 
 h1 {
+  font-size: font-size-adjust(70);
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 3px #000;
+  font-family: $font-aboreto;
+}
+
+h4{
+  font-size: font-size-adjust(14);
+  @extend %underline;
 }
 
 select, input {
@@ -15,8 +25,7 @@ p{
   color: red;
 }
 
-
-article button{
+button{
   font-size: font-size-adjust(15);
 }
 @media(max-width: $md-screen){
@@ -27,7 +36,7 @@ article button{
     font-size: font-size-adjust(21);
   }
 
-  article button{
+  button{
     font-size: font-size-adjust(17);
   }
   p{

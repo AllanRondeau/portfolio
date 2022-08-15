@@ -6,8 +6,14 @@ html {
 
 body {
   margin: 0;
+  height: 100vh;
+  width: 100vw;
 } /*remove default margin*/
 
 fieldset {
   border: none;
 }/*remove default border on fieldset*/
+
+h1, h2, h3, h4, h5, h6, figure{
+  margin: 0;
+}

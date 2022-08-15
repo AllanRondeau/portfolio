@@ -6,7 +6,7 @@ import {BehaviorSubject} from "rxjs";
         selector: "app-es-root",
         template: `
             <ng-container *ngIf="componentState | async as state">
-                <article *ngIf="state.isLoading else loadingHomeOK">Loading</article>
+                <div *ngIf="state.isLoading else loadingHomeOK">Loading</div>
                 <ng-template #loadingHomeOK>
                     <app-home-section></app-home-section>
                 </ng-template>
@@ -18,7 +18,7 @@ export class AppComponent {
 
     componentState: BehaviorSubject<AppComponentState> = new BehaviorSubject(
         new AppComponentState(
-            true,
+            false,
         )
     );
 }

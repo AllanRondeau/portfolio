@@ -1,0 +1,13 @@
+#home{
+  a{
+    color: $secondaryColor;
+    text-decoration: underline $secondaryColor;
+
+  }
+
+  a:before{
+    content: "";
+    background-image: url("../images/githubIcon.svg");
+    @include ImageDisplayOnBeforeAndAfterCssProp(3vw,3vw)
+  }
+}

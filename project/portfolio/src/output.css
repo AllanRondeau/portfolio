@@ -2,6 +2,10 @@
 /*Important color*/
 /*Responsive*/
 /*adjust the font size:  10% of $size * 10% of screen lenght*/
+h4 {
+  text-decoration: underline 2px solid;
+}
+
 select {
   width: fit-content;
   border: none;
@@ -9,12 +13,30 @@ select {
   height: 5vh;
 }
 
-select {
+#home {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+button, select {
   cursor: pointer;
 }
 
 body {
-  font-family: "lato", sans-serif;
+  font-family: "roboto", sans-serif;
+}
+
+h1 {
+  font-size: 7vw;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 3px #000;
+  font-family: "aboreto", sans-serif;
+}
+
+h4 {
+  font-size: 1.4vw;
 }
 
 select, input {
@@ -26,7 +48,7 @@ p {
   color: red;
 }
 
-article button {
+button {
   font-size: 1.5vw;
 }
 
@@ -37,7 +59,7 @@ article button {
   select, input {
     font-size: 2.1vw;
   }
-  article button {
+  button {
     font-size: 1.7vw;
   }
   p {
@@ -83,15 +105,104 @@ html {
 } /*declare screen zone*/
 body {
   margin: 0;
+  height: 100vh;
+  width: 100vw;
 } /*remove default margin*/
 fieldset {
   border: none;
 } /*remove default border on fieldset*/
+h1, h2, h3, h4, h5, h6, figure {
+  margin: 0;
+}
+
 hr {
   width: 10vw;
   height: 2px;
   background-color: #72E3AF;
   margin-bottom: 2vh;
+}
+
+button {
+  transition: all 0.35s ease;
+}
+
+#home article #contactHomeBtn {
+  background-color: white;
+  border: 2px solid #72E3AF;
+  color: #72E3AF;
+}
+#home article #contactHomeBtn:hover {
+  box-shadow: 20px 5px 0 #72E3AF;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #72E3AF, 0 0 70px #72E3AF, 0 0 80px #72E3AF, 0 0 100px #72E3AF, 0 0 150px #72E3AF;
+}
+#home article #discoverBtn {
+  background-color: #72E3AF;
+  color: white;
+  border: none;
+}
+#home article #discoverBtn:hover {
+  padding: 1.2vw;
+}
+
+#home header {
+  border: 2px solid #72E3AF;
+  transform: skew(-15deg);
+}
+
+#home a {
+  color: #2AD587;
+  text-decoration: underline #2AD587;
+}
+#home a:before {
+  content: "";
+  background-image: url("../images/githubIcon.svg");
+  background-size: 3vw 3vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 3vw;
+  height: 3vw;
+  display: block;
+  content: "";
+}
+
+#home {
+  width: 100vw;
+  height: 100vh;
+}
+#home article:first-child {
+  padding-top: 20vh;
+  padding-left: 5vw;
+  width: 60vw;
+  flex-basis: 60vw;
+}
+#home article:first-child header {
+  margin-left: 4vw;
+  margin-bottom: 15vh;
+}
+#home article:first-child h4 {
+  margin-left: 10vw;
+}
+#home article:first-child form {
+  margin-top: 12vh;
+  margin-left: 10vw;
+}
+#home article:first-child form button {
+  margin: 0 2.5vw;
+  padding: 1vw;
+}
+#home article:first-child a {
+  margin-top: 12vh;
+  display: inline-block;
+}
+#home article:last-child {
+  flex-basis: 50vw;
+}
+#home figure {
+  height: 100vh;
+  background-image: url("../images/DevIconHomePage.jpg");
+  background-size: 35vw;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 body {
