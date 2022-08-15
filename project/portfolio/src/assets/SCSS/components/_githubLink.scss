@@ -7,7 +7,7 @@
 
   a:before{
     background-image: url("../images/githubIcon.svg");
-    @include ImageDisplayOnBeforeAndAfterCssProp(3vw,3vh)
+    @include ImageDisplayOnBeforeAndAfterCssProp(5vw,5vh)
   }
 }
 

@@ -188,11 +188,11 @@ button {
 }
 #home a:before {
   background-image: url("../images/githubIcon.svg");
-  background-size: 3vw 3vh;
+  background-size: 5vw 5vh;
   background-repeat: no-repeat;
   background-position: center;
-  width: 3vw;
-  height: 3vh;
+  width: 5vw;
+  height: 5vh;
   display: block;
   content: "";
 }
