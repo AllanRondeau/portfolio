@@ -23,25 +23,89 @@
       margin-top: 12vh;
       margin-left: 10vw;
 
-      button{
+      button {
         margin: 0 2.5vw;
         padding: 1vw;
       }
     }
-    a{
+
+    a {
       margin-top: 12vh;
       display: inline-block;
     }
 
   }
-  article:last-child{
+
+  article:last-child {
     flex-basis: 50vw;
   }
 
-  figure{
+  figure {
     height: 100vh;
     @include bgImage("../images/DevIconHomePage.jpg", 35vw);
     background-position: center;
   }
 
+}
+
+@media(max-width: $sm-screen) {
+  #home {
+    article:first-child {
+      flex-basis: 70vw;
+      padding-left: 1vw;
+
+      form {
+        width: 70vw;
+        display: flex;
+        flex-direction: column;
+
+        button {
+          width: fit-content;
+          margin: 0;
+        }
+
+        button:last-child {
+          margin-top: 3vh;
+        }
+      }
+
+    }
+  }
+
+  figure {
+    background-size: 50vw;
+  }
+
+}
+
+@media(max-width: $xs-screen) {
+  #home {
+    overflow: hidden;
+
+    h4 {
+      margin-top: 32vh;
+      margin-left: 7vw;
+    }
+
+    article:first-child {
+      padding-top: 12vh;
+      flex-basis: 100vw;
+
+      form {
+        margin-left: 15vw;
+        width: 100vw;
+      }
+    }
+
+    figure {
+      background-size: 60vw;
+      position: absolute;
+      left: 30%;
+      bottom: 15%;
+      width: 60vw;
+      z-index: -1;
+    }
+
+
+  }
 }

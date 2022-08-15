@@ -6,19 +6,19 @@ button {
 #home article {
   #contactHomeBtn {
     background-color: white;
-    border: 2px solid $primaryColor;
-    color: $primaryColor;
+    border: 2px solid $secondaryColor;
+    color: $secondaryColor;
 
   }
 
   #contactHomeBtn:hover {
-    box-shadow: 20px 5px 0 $primaryColor;
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px $primaryColor,
-    0 0 70px $primaryColor, 0 0 80px $primaryColor, 0 0 100px $primaryColor, 0 0 150px $primaryColor;
+    box-shadow: 20px 5px 0 $secondaryColor;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px $secondaryColor,
+    0 0 70px $secondaryColor, 0 0 80px $secondaryColor, 0 0 100px $secondaryColor, 0 0 150px $secondaryColor;
   }
 
   #discoverBtn{
-    background-color: $primaryColor;
+    background-color: $secondaryColor;
     color: white;
     border: none;
   }

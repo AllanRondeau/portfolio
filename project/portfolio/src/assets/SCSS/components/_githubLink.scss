@@ -6,8 +6,15 @@
   }
 
   a:before{
-    content: "";
     background-image: url("../images/githubIcon.svg");
-    @include ImageDisplayOnBeforeAndAfterCssProp(3vw,3vw)
+    @include ImageDisplayOnBeforeAndAfterCssProp(3vw,3vh)
+  }
+}
+
+@media (max-width: $md-screen) {
+  #home {
+    a:before {
+      @include ImageDisplayOnBeforeAndAfterCssProp(6vw, 6vh);
+    }
   }
 }

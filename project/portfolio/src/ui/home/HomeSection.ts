@@ -6,7 +6,7 @@ import {ChangeDetectionStrategy, Component} from "@angular/core";
         template: `
           <section id="home">
             <article>
-              <header><h1>Welcome</h1></header>
+              <header><h1><span class="titleMarker"> < </span>Welcome <span class="titleMarker"> > </span></h1></header>
               <h4>I'm Allan Rondeau, a junior web developper</h4>
               <form>
                 <button type="button" name="contactHomeLink" id="contactHomeBtn"> Contact me!</button>

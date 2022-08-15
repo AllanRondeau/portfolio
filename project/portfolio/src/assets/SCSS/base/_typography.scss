@@ -9,10 +9,18 @@ h1 {
   text-shadow: 0 0 3px #000;
   font-family: $font-aboreto;
 }
+.titleMarker{
+  color: $primaryColor;
+  font-weight: 100;
+}
 
 h4{
   font-size: font-size-adjust(14);
   @extend %underline;
+}
+
+a{
+  font-size: font-size-adjust(12);
 }
 
 select, input {
@@ -30,8 +38,12 @@ button{
 }
 @media(max-width: $md-screen){
   h1{
-    font-size: font-size-adjust(36);
+    font-size: font-size-adjust(68);
   }
+  h4{
+    font-size: font-size-adjust(17);
+  }
+
   select, input{
     font-size: font-size-adjust(21);
   }
@@ -42,21 +54,35 @@ button{
   p{
     font-size: font-size-adjust(12);
   }
+
+  a{
+    font-size: font-size-adjust(16);
+  }
 }
 
 @media(max-width: $sm-screen){
   h1{
-    font-size: font-size-adjust(35);
+    font-size: font-size-adjust(75);
   }
+
+  h4{
+    font-size: font-size-adjust(30);
+    font-weight: 100;
+    font-style: italic;
+  }
+
   select, input{
     font-size: font-size-adjust(20);
   }
 
   article button{
-    font-size: font-size-adjust(20);
+    font-size: font-size-adjust(35);
   }
   p{
     font-size: font-size-adjust(15);
+  }
+  a{
+    font-size: font-size-adjust(20);
   }
 }
 .hookError{
@@ -68,13 +94,24 @@ button{
     font-size: font-size-adjust(25);
   }
   h1{
-    font-size: font-size-adjust(40);
+    font-size: font-size-adjust(90);
+  }
+  h4{
+    font-size: font-size-adjust(30);
+    color: #ffffff;
+    background-color: $primaryColor;
+    text-align: center;
+    text-decoration: none;
+
   }
   article button{
-    font-size: font-size-adjust(25);
+    font-size: font-size-adjust(40);
   }
   p{
     font-size: font-size-adjust(18);
+  }
+  a{
+    font-size: font-size-adjust(24);
   }
 }
 
