@@ -1,6 +1,6 @@
 {
-  "/backend-v2/*": {
-    "target": "http://localhost/",
+  "/backend_v2/*": {
+    "target": "http://localhost:80/",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true

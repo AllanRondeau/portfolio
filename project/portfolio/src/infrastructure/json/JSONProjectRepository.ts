@@ -40,7 +40,6 @@ export class JSONProjectRepository implements AsyncProjectRepository{
             }
         );
     }
-
     loadProject(): Promise<Array<Project>> {
         return this.loadTransformProject(this.projectJSONProducer);
     }

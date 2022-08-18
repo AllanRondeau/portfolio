@@ -208,6 +208,14 @@ button {
     content: "";
   }
 }
+.projectDetails {
+  display: none;
+}
+
+.displayProjectDetails {
+  display: flex;
+}
+
 #home {
   width: 100vw;
   height: 100vh;

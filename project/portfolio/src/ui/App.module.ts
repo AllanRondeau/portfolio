@@ -1,8 +1,9 @@
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
 import {AppComponent} from "./App.component";
-import {HomeSectionComponent} from "./home/HomeSection";
+import {HomeSectionComponent} from "./homePage/HomeSection";
 import {HttpProjectRepository} from "../infrastructure/HttpProjectRepository";
+import {ProjectSectionComponent} from "./homePage/ProjectSection";
 
 
 
@@ -12,7 +13,8 @@ import {HttpProjectRepository} from "../infrastructure/HttpProjectRepository";
     ],
     declarations: [
         AppComponent,
-        HomeSectionComponent
+        HomeSectionComponent,
+        ProjectSectionComponent,
     ],
     providers: [
         {provide: "AsyncProjectRepository", useClass: HttpProjectRepository}

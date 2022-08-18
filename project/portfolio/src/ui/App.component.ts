@@ -2,6 +2,7 @@ import {ChangeDetectionStrategy, Component, Inject, inject} from "@angular/core"
 import {BehaviorSubject} from "rxjs";
 import {Project} from "../domain/Project";
 import {AsyncProjectRepository} from "../application/AsyncProjectRepository";
+import {DisplayProject} from "../application/DisplayProject";
 
 @Component({
         changeDetection: ChangeDetectionStrategy.OnPush,
@@ -10,7 +11,10 @@ import {AsyncProjectRepository} from "../application/AsyncProjectRepository";
           <ng-container *ngIf="componentState | async as state">
             <div *ngIf="state.isLoading else loadingHomeOK">Loading</div>
             <ng-template #loadingHomeOK>
-              <app-home-section></app-home-section>
+              <main>
+                <app-home-section></app-home-section>
+                <app-project-section></app-project-section>
+              </main>
             </ng-template>
           </ng-container>
         `
@@ -20,47 +24,17 @@ export class AppComponent {
 
     componentState: BehaviorSubject<AppComponentState> = new BehaviorSubject(
         new AppComponentState(
-            true,
+            false
         )
     );
 
-    constructor(@Inject("AsyncProjectRepository") private projectRepository: AsyncProjectRepository) {
-        // Recover datas from a promise once it load
-        Promise.all([
-            projectRepository.loadProject()
-        ]).then(([projects]) => {
-            this.componentState.next(
-                new AppComponentState(
-                    false, // when loading is finish, display project on screen
-                )
-            );
-            console.info(projectRepository);
-            // for developper logs
-        }).catch(rejectionCause => {
-            console.warn("Error loading datas ; received error", rejectionCause);
-            // to warn the user
-            this.componentState.next(
-                new AppComponentState(
-                    false,
-                    "A technical error occured :" + rejectionCause
-                )
-            );
-        });
-
-    }
 }
 
 export class AppComponentState {
 
-    constructor(readonly isLoading: boolean,
-                readonly technicalError?: string) {
+    constructor(readonly isLoading: boolean) {
     }
 
-    finishedLoading = () =>
-        new AppComponentState(
-            false,
-            this.technicalError
-        )
 }
 
 
