@@ -140,6 +140,7 @@ body {
   margin: 0;
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
 } /*remove default margin*/
 fieldset {
   border: none;
@@ -208,10 +209,6 @@ button {
     content: "";
   }
 }
-.projectDetails {
-  display: none;
-}
-
 .displayProjectDetails {
   display: flex;
 }
@@ -302,6 +299,10 @@ button {
     z-index: -1;
   }
 }
+#projectSection {
+  display: flex;
+}
+
 body {
   transition: 0.5s all;
 }

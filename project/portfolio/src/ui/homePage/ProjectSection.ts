@@ -19,12 +19,13 @@ import {BehaviorSubject} from "rxjs";
                   <article>
                     <!--                  <img src="{{p.filePathImage}}" alt="">-->
                     <h4>{{p.projectTitle}}</h4>
-                    <button type="button">See more</button>
+                    <button type="button" (click)="showData()">See more</button>
                   </article>
-                  <article class="projectDetails">
+                  <article class="projectDetails" *ngIf="details == true">
                     <p>Date project:<i>{{p.projectStartDate}} - {{p.projectEndDate}}</i></p>
                     <p>Techs used: <i>{{p.projectTechnology}}</i></p>
                     <p>{{p.projectSummary}}</p>
+                    <button type="button" (click)="hideData()">Close</button>
                   </article>
                 </ng-container>
               </ng-container>
@@ -72,6 +73,14 @@ export class ProjectSectionComponent {
 
     }
 
+    details = false;
+    showData() {
+        return (this.details = true)
+    }
+
+    hideData() {
+        return (this.details = false)
+    }
 }
 
 export class ProjectComponentState {
@@ -83,23 +92,5 @@ export class ProjectComponentState {
 
 }
 
-const ProjectDetails = document.querySelectorAll(".projectDetails");
-const btnDisplayDetails = document.querySelectorAll("#projectSection");
-//css class
-const displayDetails = "displayProjectDetails";
-function animationEvent() {
-    ProjectDetails.classList.add(displayDetails)
-}
-
-btnDisplayDetails.forEach(btn =>
-    function displayProjectDetails() {
-        btn?.addEventListener("click" , function handClick(event) {
-            ProjectDetails.forEach(value => function AnimationEvent(){
-                new CSSStyleDeclaration.setProperty()
-
-            });
-        });
-    }
-);
 
 

@@ -11,5 +11,5 @@
     $pass = "root";
 
     // Nom de la base de donnes
-    $dbName = "lyceestvincent_arondeau";
+    $dbName = "lyceestvincent";
 ?>
