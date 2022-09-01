@@ -15,17 +15,17 @@ import {BehaviorSubject} from "rxjs";
                   <h3>My Projects</h3>
                   <hr>
                 </header>
-                <ng-container *ngFor="let p of projectOnHomePage.projects">
+                <ng-container id="projectBox" *ngFor="let p of projectOnHomePage.projects ; let i = index">
                   <article>
                     <!--                  <img src="{{p.filePathImage}}" alt="">-->
                     <h4>{{p.projectTitle}}</h4>
-                    <button type="button" (click)="showData()">See more</button>
+                    <button [attr.id]="'DetailsBtn'+i" (click)="showDetailsBtn(i)">See more</button>
                   </article>
-                  <article class="projectDetails" *ngIf="details == true">
+                  <article class="projectDetails" *ngIf="showDetails===i">
                     <p>Date project:<i>{{p.projectStartDate}} - {{p.projectEndDate}}</i></p>
                     <p>Techs used: <i>{{p.projectTechnology}}</i></p>
                     <p>{{p.projectSummary}}</p>
-                    <button type="button" (click)="hideData()">Close</button>
+                    <button (click)="hookDetailsBtn(i)">Close</button>
                   </article>
                 </ng-container>
               </ng-container>
@@ -73,14 +73,16 @@ export class ProjectSectionComponent {
 
     }
 
-    details = false;
-    showData() {
-        return (this.details = true)
+    showDetails = -1;
+
+    showDetailsBtn(index: number) {
+        this.showDetails = index;
     }
 
-    hideData() {
-        return (this.details = false)
+    hookDetailsBtn(index: number) {
+        this.showDetails = -2;
     }
+
 }
 
 export class ProjectComponentState {

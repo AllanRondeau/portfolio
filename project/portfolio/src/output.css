@@ -138,9 +138,7 @@ html {
 } /*declare screen zone*/
 body {
   margin: 0;
-  height: 100vh;
   width: 100vw;
-  overflow: hidden;
 } /*remove default margin*/
 fieldset {
   border: none;
@@ -188,7 +186,6 @@ button {
   text-decoration: underline #2AD587;
 }
 #home a:before {
-  background-image: url("../images/githubIcon.svg");
   background-size: 5vw 5vh;
   background-repeat: no-repeat;
   background-position: center;
@@ -247,9 +244,6 @@ button {
 }
 #home figure {
   height: 100vh;
-  background-image: url("../images/DevIconHomePage.jpg");
-  background-size: 35vw;
-  background-repeat: no-repeat;
   background-position: center;
 }
 
@@ -300,7 +294,8 @@ button {
   }
 }
 #projectSection {
-  display: flex;
+  width: 90vw;
+  height: 100vh;
 }
 
 body {
