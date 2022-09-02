@@ -13,10 +13,16 @@ select {
   height: 5vh;
 }
 
-#home {
+#projectSection #projectBox, #home {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+#projectSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 button, select {
@@ -40,6 +46,11 @@ h1 {
   font-weight: 100;
 }
 
+h3 {
+  font-size: 1.8vw;
+  color: #2AD587;
+}
+
 h4 {
   font-size: 1.4vw;
 }
@@ -53,8 +64,10 @@ select, input {
 }
 
 p {
-  font-size: 0.8vw;
-  color: red;
+  font-size: 1vw;
+}
+p i {
+  color: #72E3AF;
 }
 
 button {
@@ -116,10 +129,6 @@ button {
   }
   h4 {
     font-size: 3vw;
-    color: #ffffff;
-    background-color: #72E3AF;
-    text-align: center;
-    text-decoration: none;
   }
   article button {
     font-size: 4vw;
@@ -139,6 +148,8 @@ html {
 body {
   margin: 0;
   width: 100vw;
+  height: 100%;
+  overflow-x: hidden;
 } /*remove default margin*/
 fieldset {
   border: none;
@@ -206,8 +217,26 @@ button {
     content: "";
   }
 }
-.displayProjectDetails {
-  display: flex;
+#projectSection .projects {
+  margin: 5vw 8vw;
+  width: 25vw;
+  height: fit-content;
+  border: #2AD587 1px solid;
+  border-radius: 10px;
+}
+#projectSection .projects button {
+  background-color: white;
+  border: 1px solid #2AD587;
+  color: #2AD587;
+  border-radius: 5px;
+}
+#projectSection .projects button:hover {
+  color: white;
+  background-color: #2AD587;
+}
+#projectSection .projects .projectsDetails {
+  transition: transform 1s;
+  -webkit-transition: height 1s;
 }
 
 #home {
@@ -275,6 +304,10 @@ button {
   #home h4 {
     margin-top: 32vh;
     margin-left: 7vw;
+    color: #ffffff;
+    background-color: #72E3AF;
+    text-align: center;
+    text-decoration: none;
   }
   #home article:first-child {
     padding-top: 12vh;
@@ -294,10 +327,33 @@ button {
   }
 }
 #projectSection {
-  width: 90vw;
   height: 100vh;
 }
+#projectSection header {
+  text-align: center;
+  margin-top: 5vh;
+}
+#projectSection #projectBox {
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 70vh;
+}
+#projectSection #projectBox h4 {
+  text-align: center;
+  margin-bottom: 5vh;
+}
+#projectSection #projectBox button {
+  margin-bottom: 2vh;
+  margin-left: 1vw;
+}
 
+@media (max-width: 560px) {
+  #projectSection #projectBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 body {
   transition: 0.5s all;
 }

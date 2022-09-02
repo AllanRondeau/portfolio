@@ -1,5 +1,27 @@
-.displayProjectDetails{
-  display: flex;
+#projectSection {
+
+  .projects {
+    margin: 5vw 8vw;
+    width: 25vw;
+    height: fit-content;
+    border: $secondaryColor 1px solid;
+    border-radius: 10px;
+
+    button{
+      background-color: white;
+      border: 1px solid $secondaryColor;
+      color: $secondaryColor;
+      border-radius: 5px;
+    }
+
+    button:hover{
+      color: white;
+      background-color: $secondaryColor;
+
+    }
+    .projectsDetails {
+      transition: transform 1s;
+      -webkit-transition: height 1s;
+    }
+  }
 }
-
-

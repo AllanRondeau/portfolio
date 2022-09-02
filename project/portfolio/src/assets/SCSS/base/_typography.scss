@@ -14,6 +14,11 @@ h1 {
   font-weight: 100;
 }
 
+h3{
+  font-size: font-size-adjust(18);
+  color: $secondaryColor;
+}
+
 h4{
   font-size: font-size-adjust(14);
   @extend %underline;
@@ -29,8 +34,10 @@ select, input {
 }
 
 p{
-  font-size: font-size-adjust(8);
-  color: red;
+  font-size: font-size-adjust(10);
+  i{
+    color: $primaryColor;
+  }
 }
 
 button{
@@ -98,10 +105,6 @@ button{
   }
   h4{
     font-size: font-size-adjust(30);
-    color: #ffffff;
-    background-color: $primaryColor;
-    text-align: center;
-    text-decoration: none;
   }
   article button{
     font-size: font-size-adjust(40);
