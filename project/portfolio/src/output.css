@@ -13,7 +13,7 @@ select {
   height: 5vh;
 }
 
-#projectSection #projectBox, #home {
+#aboutMe div, #projectSection #projectBox, #home {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -70,6 +70,10 @@ p {
 }
 p i {
   color: #72E3AF;
+}
+
+#aboutMe p {
+  font-size: 1.7vw;
 }
 
 button {
@@ -166,6 +170,10 @@ fieldset {
 } /*remove default border on fieldset*/
 h1, h2, h3, h4, h5, h6, figure {
   margin: 0;
+}
+
+header {
+  text-align: center;
 }
 
 hr {
@@ -368,6 +376,40 @@ button {
     align-items: center;
     flex-wrap: unset;
   }
+}
+#aboutMe {
+  height: 100vh;
+}
+#aboutMe header {
+  margin-bottom: 13vh;
+}
+#aboutMe div {
+  flex-basis: 50vw;
+}
+#aboutMe #profilePic {
+  background-image: url("../../images/PP.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 30vw;
+  height: 55vh;
+}
+#aboutMe article {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+}
+#aboutMe article p {
+  text-align: center;
+  width: 40vw;
+  color: white;
+}
+#aboutMe article:last-child {
+  background: #2AD587;
+  border-radius: 10px;
+  margin-right: 0;
+  padding-right: 5vw;
+  padding-left: 1vw;
 }
 
 /*# sourceMappingURL=output.css.map */

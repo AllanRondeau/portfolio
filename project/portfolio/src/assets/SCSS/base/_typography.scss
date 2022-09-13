@@ -43,6 +43,9 @@ p {
     color: $primaryColor;
   }
 }
+#aboutMe p{
+  font-size: font-size-adjust(17);
+}
 
 button {
   font-size: font-size-adjust(15);

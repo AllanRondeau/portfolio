@@ -4,6 +4,7 @@ import {AppComponent} from "./App.component";
 import {HomeSectionComponent} from "./homePage/HomeSection";
 import {HttpProjectRepository} from "../infrastructure/HttpProjectRepository";
 import {ProjectSectionComponent} from "./homePage/ProjectSection";
+import {AboutSection} from "./homePage/AboutSection";
 
 
 
@@ -15,6 +16,7 @@ import {ProjectSectionComponent} from "./homePage/ProjectSection";
         AppComponent,
         HomeSectionComponent,
         ProjectSectionComponent,
+        AboutSection
     ],
     providers: [
         {provide: "AsyncProjectRepository", useClass: HttpProjectRepository}

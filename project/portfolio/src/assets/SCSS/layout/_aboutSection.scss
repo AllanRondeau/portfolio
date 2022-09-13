@@ -1,0 +1,42 @@
+#aboutMe {
+
+  height: 100vh;
+
+  header {
+    margin-bottom: 13vh;
+  }
+
+  div {
+    @extend %displayFlexRow;
+    flex-basis: 50vw;
+  }
+
+  #profilePic {
+    background-image: url("../../images/PP.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 30vw;
+    height: 55vh;
+  }
+
+  article {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+
+    p {
+      text-align: center;
+      width: 40vw;
+      color: white;
+
+    }
+  }
+  article:last-child{
+    background: $secondaryColor;
+    border-radius: 10px;
+    margin-right: 0;
+    padding-right: 5vw;
+    padding-left: 1vw;
+  }
+}
