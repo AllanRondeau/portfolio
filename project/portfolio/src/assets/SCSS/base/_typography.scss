@@ -9,22 +9,25 @@ h1 {
   text-shadow: 0 0 3px #000;
   font-family: $font-aboreto;
 }
-.titleMarker{
+
+.titleMarker {
   color: $primaryColor;
   font-weight: 100;
 }
 
-h3{
-  font-size: font-size-adjust(18);
+h3 {
+  font-size: font-size-adjust(21);
   color: $secondaryColor;
 }
 
-h4{
+h4 {
   font-size: font-size-adjust(14);
   @extend %underline;
+  font-weight: 100;
+  font-style: italic;
 }
 
-a{
+a {
   font-size: font-size-adjust(12);
 }
 
@@ -33,86 +36,95 @@ select, input {
 
 }
 
-p{
+p {
   font-size: font-size-adjust(10);
-  i{
+
+  i {
     color: $primaryColor;
   }
 }
 
-button{
+button {
   font-size: font-size-adjust(15);
 }
-@media(max-width: $md-screen){
-  h1{
+
+@media(max-width: $md-screen) {
+  h1 {
     font-size: font-size-adjust(68);
   }
-  h4{
+  h3{
+    font-size: font-size-adjust(27);
+  }
+  h4 {
     font-size: font-size-adjust(17);
   }
 
-  select, input{
+  select, input {
     font-size: font-size-adjust(21);
   }
 
-  button{
+  button {
     font-size: font-size-adjust(17);
   }
-  p{
+  p {
     font-size: font-size-adjust(12);
   }
 
-  a{
+  a {
     font-size: font-size-adjust(16);
   }
 }
 
-@media(max-width: $sm-screen){
-  h1{
+@media(max-width: $sm-screen) {
+  h1 {
     font-size: font-size-adjust(75);
   }
-
-  h4{
+  h3{
+  font-size: font-size-adjust(30);
+  }
+  h4 {
     font-size: font-size-adjust(30);
-    font-weight: 100;
-    font-style: italic;
   }
 
-  select, input{
+  select, input {
     font-size: font-size-adjust(20);
   }
 
-  article button{
+  article button {
     font-size: font-size-adjust(35);
   }
-  p{
+  p {
     font-size: font-size-adjust(15);
   }
-  a{
+  a {
     font-size: font-size-adjust(20);
   }
 }
-.hookError{
+
+.hookError {
   display: none;
 }
 
 @media(max-width: $xs-screen) {
-  select, input{
+  select, input {
     font-size: font-size-adjust(25);
   }
-  h1{
+  h1 {
     font-size: font-size-adjust(90);
   }
-  h4{
+  h3{
+    font-size: font-size-adjust(35);
+  }
+  h4 {
     font-size: font-size-adjust(30);
   }
-  article button{
+  article button {
     font-size: font-size-adjust(40);
   }
-  p{
+  p {
     font-size: font-size-adjust(18);
   }
-  a{
+  a {
     font-size: font-size-adjust(24);
   }
 }

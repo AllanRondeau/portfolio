@@ -20,7 +20,7 @@ button {
   #discoverBtn{
     background-color: $secondaryColor;
     color: white;
-    border: none;
+    border: 1px solid rgba(0,0,0,0.4);
   }
   #discoverBtn:hover{
     padding: 1.2vw;

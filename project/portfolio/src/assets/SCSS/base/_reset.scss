@@ -2,6 +2,7 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 } /*declare screen zone*/
 
 body {
@@ -9,6 +10,7 @@ body {
   width: 100vw;
   height: 100%;
   overflow-x: hidden;
+
 } /*remove default margin*/
 
 

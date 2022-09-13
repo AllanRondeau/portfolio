@@ -47,12 +47,14 @@ h1 {
 }
 
 h3 {
-  font-size: 1.8vw;
+  font-size: 2.1vw;
   color: #2AD587;
 }
 
 h4 {
   font-size: 1.4vw;
+  font-weight: 100;
+  font-style: italic;
 }
 
 a {
@@ -78,6 +80,9 @@ button {
   h1 {
     font-size: 6.8vw;
   }
+  h3 {
+    font-size: 2.7vw;
+  }
   h4 {
     font-size: 1.7vw;
   }
@@ -98,10 +103,11 @@ button {
   h1 {
     font-size: 7.5vw;
   }
+  h3 {
+    font-size: 3vw;
+  }
   h4 {
     font-size: 3vw;
-    font-weight: 100;
-    font-style: italic;
   }
   select, input {
     font-size: 2vw;
@@ -127,6 +133,9 @@ button {
   h1 {
     font-size: 9vw;
   }
+  h3 {
+    font-size: 3.5vw;
+  }
   h4 {
     font-size: 3vw;
   }
@@ -144,6 +153,7 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 } /*declare screen zone*/
 body {
   margin: 0;
@@ -181,7 +191,7 @@ button {
 #home article #discoverBtn {
   background-color: #2AD587;
   color: white;
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.4);
 }
 #home article #discoverBtn:hover {
   padding: 1.2vw;
@@ -239,6 +249,11 @@ button {
   -webkit-transition: height 1s;
 }
 
+@media (max-width: 560px) {
+  #projectSection .projects {
+    width: 55vw;
+  }
+}
 #home {
   width: 100vw;
   height: 100vh;
@@ -336,7 +351,6 @@ button {
 #projectSection #projectBox {
   flex-wrap: wrap;
   width: 100vw;
-  height: 70vh;
 }
 #projectSection #projectBox h4 {
   text-align: center;
@@ -352,10 +366,8 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-wrap: unset;
   }
-}
-body {
-  transition: 0.5s all;
 }
 
 /*# sourceMappingURL=output.css.map */
