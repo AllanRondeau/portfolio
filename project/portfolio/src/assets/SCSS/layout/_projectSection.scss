@@ -1,10 +1,10 @@
 #projectSection {
-  height: 100vh;
   @extend %displayFlexColumn;
+  margin-bottom: 2vh;
 
   header {
     text-align: center;
-    margin-top: 5vh;
+    margin-top: 3vh;
   }
 
   #projectBox {
@@ -27,7 +27,6 @@
 
 @media(max-width: $xs-screen) {
   #projectSection {
-
     #projectBox {
       display: flex;
       flex-direction: column;

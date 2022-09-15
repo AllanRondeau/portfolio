@@ -43,8 +43,13 @@ p {
     color: $primaryColor;
   }
 }
-#aboutMe p{
-  font-size: font-size-adjust(17);
+
+#aboutMe p {
+  font-size: font-size-adjust(19);
+
+  a {
+    color: white;
+  }
 }
 
 button {
@@ -55,7 +60,7 @@ button {
   h1 {
     font-size: font-size-adjust(68);
   }
-  h3{
+  h3 {
     font-size: font-size-adjust(27);
   }
   h4 {
@@ -72,6 +77,9 @@ button {
   p {
     font-size: font-size-adjust(12);
   }
+  #aboutMe p {
+    font-size: font-size-adjust(22);
+  }
 
   a {
     font-size: font-size-adjust(16);
@@ -82,8 +90,8 @@ button {
   h1 {
     font-size: font-size-adjust(75);
   }
-  h3{
-  font-size: font-size-adjust(30);
+  h3 {
+    font-size: font-size-adjust(30);
   }
   h4 {
     font-size: font-size-adjust(30);
@@ -98,6 +106,9 @@ button {
   }
   p {
     font-size: font-size-adjust(15);
+  }
+  #aboutMe p {
+    font-size: font-size-adjust(24);
   }
   a {
     font-size: font-size-adjust(20);
@@ -115,7 +126,7 @@ button {
   h1 {
     font-size: font-size-adjust(90);
   }
-  h3{
+  h3 {
     font-size: font-size-adjust(35);
   }
   h4 {
@@ -126,6 +137,9 @@ button {
   }
   p {
     font-size: font-size-adjust(18);
+  }
+  #aboutMe p{
+    font-size: font-size-adjust(30);
   }
   a {
     font-size: font-size-adjust(24);

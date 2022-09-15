@@ -13,8 +13,7 @@ import {ChangeDetectionStrategy, Component} from "@angular/core";
             <article id="profilePic">
             </article>
             <article>
-              <p>Hi i'm <span>Allan Rondeau</span>, i'm studying at the <a href="https://enseignement-superieur.lycee-stvincent.fr/" target="_blank"> BTS SIO SLAM of Saint Vincent high school in Senlis </a>. I'm learning and coding every day to become a full stack developer. Overall I'm looking for a way to increase my skills and my thinking process. My projects are always developed as a self-sufficient logic. It consists to create the most qualitative code which is fully understandable just by reading it</p>
-              
+              <p>Hi i'm <span>Allan Rondeau</span>, i'm studying at the <a href="https://enseignement-superieur.lycee-stvincent.fr/" target="_blank"> BTS SIO SLAM of Saint Vincent high school in Senlis </a>. I'm learning and coding every day to become a full stack developer. Overall I'm looking for a way to increase my technical skills. My projects are always developed in a self-sufficient logic way . It consists in create the most qualitative code which is fully understandable just by reading it</p>
             </article>
         </div>
       </section>

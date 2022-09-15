@@ -1,7 +1,5 @@
 #aboutMe {
-
-  height: 100vh;
-
+  margin-bottom: 3vh;
   header {
     margin-bottom: 13vh;
   }
@@ -18,6 +16,7 @@
     background-position: center;
     width: 30vw;
     height: 55vh;
+    border-radius: 10px;
   }
 
   article {
@@ -32,11 +31,49 @@
 
     }
   }
-  article:last-child{
+
+  article:last-child {
     background: $secondaryColor;
     border-radius: 10px;
     margin-right: 0;
     padding-right: 5vw;
     padding-left: 1vw;
+  }
+}
+
+@media(max-width: $md-screen){
+  #aboutMe {
+    #profilePic {
+      width: 30vw;
+      height: 45vh;
+    }
+  }
+}
+@media (max-width: $xs-screen) {
+  #aboutMe{
+    header{
+      margin-bottom: 8vh;
+    }
+    div{
+      flex-direction: column;
+      align-items: center;
+      flex-basis: unset;
+
+      #profilePic{
+        width: 25vw;
+        height: 35vh;
+      }
+
+      article{
+        margin: 0;
+        p{
+          margin-top: 5vh;
+          width: 60vw;
+        }
+      }
+      article:last-child{
+        margin-top: 5vh;
+      }
+    }
   }
 }

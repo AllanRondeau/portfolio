@@ -73,7 +73,10 @@ p i {
 }
 
 #aboutMe p {
-  font-size: 1.7vw;
+  font-size: 1.9vw;
+}
+#aboutMe p a {
+  color: white;
 }
 
 button {
@@ -99,6 +102,9 @@ button {
   p {
     font-size: 1.2vw;
   }
+  #aboutMe p {
+    font-size: 2.2vw;
+  }
   a {
     font-size: 1.6vw;
   }
@@ -121,6 +127,9 @@ button {
   }
   p {
     font-size: 1.5vw;
+  }
+  #aboutMe p {
+    font-size: 2.4vw;
   }
   a {
     font-size: 2vw;
@@ -149,6 +158,9 @@ button {
   p {
     font-size: 1.8vw;
   }
+  #aboutMe p {
+    font-size: 3vw;
+  }
   a {
     font-size: 2.4vw;
   }
@@ -165,6 +177,11 @@ body {
   height: 100%;
   overflow-x: hidden;
 } /*remove default margin*/
+main {
+  display: flex;
+  flex-direction: column;
+}
+
 fieldset {
   border: none;
 } /*remove default border on fieldset*/
@@ -350,11 +367,11 @@ button {
   }
 }
 #projectSection {
-  height: 100vh;
+  margin-bottom: 2vh;
 }
 #projectSection header {
   text-align: center;
-  margin-top: 5vh;
+  margin-top: 3vh;
 }
 #projectSection #projectBox {
   flex-wrap: wrap;
@@ -378,7 +395,7 @@ button {
   }
 }
 #aboutMe {
-  height: 100vh;
+  margin-bottom: 3vh;
 }
 #aboutMe header {
   margin-bottom: 13vh;
@@ -393,6 +410,7 @@ button {
   background-position: center;
   width: 30vw;
   height: 55vh;
+  border-radius: 10px;
 }
 #aboutMe article {
   display: flex;
@@ -410,6 +428,37 @@ button {
   margin-right: 0;
   padding-right: 5vw;
   padding-left: 1vw;
+}
+
+@media (max-width: 992px) {
+  #aboutMe #profilePic {
+    width: 30vw;
+    height: 45vh;
+  }
+}
+@media (max-width: 560px) {
+  #aboutMe header {
+    margin-bottom: 8vh;
+  }
+  #aboutMe div {
+    flex-direction: column;
+    align-items: center;
+    flex-basis: unset;
+  }
+  #aboutMe div #profilePic {
+    width: 25vw;
+    height: 35vh;
+  }
+  #aboutMe div article {
+    margin: 0;
+  }
+  #aboutMe div article p {
+    margin-top: 5vh;
+    width: 60vw;
+  }
+  #aboutMe div article:last-child {
+    margin-top: 5vh;
+  }
 }
 
 /*# sourceMappingURL=output.css.map */
