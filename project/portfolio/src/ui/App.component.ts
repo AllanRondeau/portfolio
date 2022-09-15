@@ -15,6 +15,7 @@ import {DisplayProject} from "../application/DisplayProject";
                 <app-home-section></app-home-section>
                 <app-project-section></app-project-section>
                 <app-about-section></app-about-section>
+                <app-techs-section></app-techs-section>
               </main>
             </ng-template>
           </ng-container>
