@@ -8,7 +8,7 @@
         try{
             // chaine de connexion avec API PDO
 
-            $co = new PDO("mysql:host=" . $server .";dbname=" . $dbName, $user, $pass);
+            $co = new PDO("mysql:host=" . $server .";dbname=" . $dbName, $user);
             //On d finit le mode d'erreur de PDO sur Exception
             $co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $co->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, "SET NAMES 'utf8'");
