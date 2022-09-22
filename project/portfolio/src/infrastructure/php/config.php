@@ -8,8 +8,8 @@
     $user = "root";
 
     // Variable contenant le mot de passe correspondant au login de l'utilisatur qui a les droits sur la base de données
-    $pass = "root";
+//    $pass = "root";
 
     // Nom de la base de donnes
-    $dbName = "lyceestvincent";
+    $dbName = "lyceestvincent_arondeau";
 ?>

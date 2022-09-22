@@ -232,6 +232,7 @@ button {
   text-decoration: underline #2AD587;
 }
 #home a:before {
+  background-image: url("../images/githubIcon.svg");
   background-size: 5vw 5vh;
   background-repeat: no-repeat;
   background-position: center;
@@ -254,10 +255,15 @@ button {
 }
 #projectSection .projects {
   margin: 5vw 8vw;
-  width: 25vw;
+  width: 30vw;
   height: fit-content;
   border: #2AD587 1px solid;
   border-radius: 10px;
+}
+#projectSection .projects img {
+  width: 30vw;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 #projectSection .projects button {
   background-color: white;
@@ -276,6 +282,9 @@ button {
 
 @media (max-width: 560px) {
   #projectSection .projects {
+    width: 55vw;
+  }
+  #projectSection .projects img {
     width: 55vw;
   }
 }
@@ -313,6 +322,9 @@ button {
 }
 #home figure {
   height: 100vh;
+  background-image: url("../images/DevIconHomePage.jpg");
+  background-size: 35vw;
+  background-repeat: no-repeat;
   background-position: center;
 }
 
@@ -404,7 +416,7 @@ button {
   flex-basis: 50vw;
 }
 #aboutMe #profilePic {
-  background-image: url("../../images/PP.jpg");
+  background-image: url("../images/PP.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

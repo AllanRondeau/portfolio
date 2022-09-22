@@ -19,7 +19,7 @@ import {BehaviorSubject} from "rxjs";
                   <ng-container *ngFor="let p of projectOnHomePage.projects ; let i = index">
                     <article class="projects">
                       <article>
-                        <!--                  <img src="{{p.filePathImage}}" alt="">-->
+                        <img src="{{p.filePathImage}}" alt="">
                         <h4>{{p.projectTitle}}</h4>
                         <button [attr.id]="'DetailsBtn'+i" (click)="showDetailsBtn(i)" *ngIf="showDetails != i">See more
                         </button>
