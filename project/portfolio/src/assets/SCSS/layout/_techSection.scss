@@ -1,0 +1,16 @@
+#techs{
+  aside select{
+    margin-left: 20vw;
+  }
+  article{
+    @extend %displayFlexRow;
+
+    div{
+      width: 20vw;
+
+      img{
+        margin-bottom: 3vh;
+      }
+    }
+  }
+}

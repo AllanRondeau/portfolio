@@ -27,13 +27,16 @@ h4 {
   font-style: italic;
 }
 
+h6{
+  font-size: font-size-adjust(15);
+}
+
 a {
   font-size: font-size-adjust(12);
 }
 
 select, input {
-  font-size: font-size-adjust(11);
-
+  font-size: font-size-adjust(15);
 }
 
 p {

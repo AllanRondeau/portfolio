@@ -13,7 +13,7 @@ select {
   height: 5vh;
 }
 
-#aboutMe div, #projectSection #projectBox, #home {
+#techs article, #aboutMe div, #projectSection #projectBox, #home {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -57,12 +57,16 @@ h4 {
   font-style: italic;
 }
 
+h6 {
+  font-size: 1.5vw;
+}
+
 a {
   font-size: 1.2vw;
 }
 
 select, input {
-  font-size: 1.1vw;
+  font-size: 1.5vw;
 }
 
 p {
@@ -471,6 +475,15 @@ button {
   #aboutMe div article:last-child {
     margin-top: 5vh;
   }
+}
+#techs aside select {
+  margin-left: 20vw;
+}
+#techs article div {
+  width: 20vw;
+}
+#techs article div img {
+  margin-bottom: 3vh;
 }
 
 /*# sourceMappingURL=output.css.map */
