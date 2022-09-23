@@ -42,7 +42,7 @@
 
   figure {
     height: 100vh;
-    //@include bgImage("../images/DevIconHomePage.jpg", 35vw);
+    @include bgImage("../images/DevIconHomePage.jpg", 35vw);
     background-position: center;
   }
 
