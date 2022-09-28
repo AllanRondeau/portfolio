@@ -18,68 +18,68 @@ import {ChangeDetectionStrategy, Component} from "@angular/core";
           <div>
             <img src="assets/SCSS/images/htmlIcon.svg" alt="htmlIcon">
             <img src="assets/SCSS/images/cssIcon.svg" alt="cssIcon">
-            <div>
+            <article>
               <h6>HTML & CSS</h6>
-              <p>Started to learn it since september 2021. Those language were the first instructed in my developpement
+              <p>Started to learn it since <span>september 2021</span>. Those language were the first instructed in my developpement
                 degree. </p>
-            </div>
+            </article>
           </div>
           <div>
             <img src="assets/SCSS/images/jsIcon.svg" alt="jsIcon">
-            <div>
+            <article>
               <h6>JavaScript</h6>
-              <p>Started to learn it since january 2022 by self-training and udemy online lesson. </p>
-            </div>
+              <p>Started to learn it since <span>january 2022</span> by self-training and udemy online lesson. </p>
+            </article>
           </div>
           <div>
             <img src="assets/SCSS/images/tsIcon.svg" alt="tsIcon">
             <img src="assets/SCSS/images/sassIcon.svg" alt="sassIcon">
-            <div>
+            <article class="last">
               <h6>TypeScript & SASS</h6>
-              <p>Started to learn it since june 2022. I was introduce to those technologies during my first year degree
+              <p>Started to learn it since <span>june 2022</span>. I was introduce to those technologies during my first year degree
                 internship</p>
-            </div>
+            </article>
           </div>
         </article>
         <article *ngIf="selectedTechs === 'back'">
           <div>
             <img src="assets/SCSS/images/mysqlIcon.svg" alt="sqlIcon">
-            <div>
+            <article>
               <h6>My sql</h6>
-              <p>Started to learn it since november 2021.</p>
-            </div>
+              <p>Started to learn it since <span>november 2021</span>.</p>
+            </article>
           </div>
           <div>
             <img src="assets/SCSS/images/phpIcon.svg" alt="phpIcon">
-            <div>
+            <article>
               <h6>PHP</h6>
-              <p>Started to learn it since december 2021. It's the first back web language that we learned in class. At
+              <p>Started to learn it since <span>december 2021</span>. It's the first back web language that we learned in class. At
                 first it was to develop my portfolio's back office.</p>
-            </div>
+            </article>
           </div>
           <div>
             <img src="assets/SCSS/images/tsIcon.svg" alt="tsIcon">
-            <div>
+            <article class="last">
               <h6>TypeScript</h6>
-              <p>Started to learn it during my first year degree internship on june 2022. I used it to create the domain
+              <p>Started to learn it during my first year degree internship on <span>june 2022</span>. I used it to create the domain
                 logic of the project.</p>
-            </div>
+            </article>
           </div>
         </article>
         <article *ngIf="selectedTechs === 'framework'">
           <div>
             <img src="assets/SCSS/images/bootstrapIcon.svg" alt="bootstrapIcon">
-            <div>
+            <article >
               <h6>Bootstrap</h6>
-              <p>Started to learn it in november 2021 to create a front faster on school projects.</p>
-            </div>
+              <p>Started to learn it in <span>november 2021</span> to create a front faster on school projects.</p>
+            </article>
           </div>
           <div>
             <img src="assets/SCSS/images/angularIcon.svg" alt="angularIcon">
-            <div>
+            <article class="last">
               <h6>Angular</h6>
-              <p>Started to learn it during my first year degree internship on june 2022.</p>
-            </div>
+              <p>Started to learn it during my first year degree internship on <span>june 2022</span>.</p>
+            </article>
           </div>
         </article>
       </section>

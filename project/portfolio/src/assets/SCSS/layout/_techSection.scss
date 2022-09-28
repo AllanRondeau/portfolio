@@ -1,16 +1,48 @@
-#techs{
-  aside select{
+#techs {
+  aside select {
     margin-left: 20vw;
   }
-  article{
+
+  article {
     @extend %displayFlexRow;
+    margin-bottom: 5vh;
 
-    div{
-      width: 20vw;
+    div {
+      width: 27vw;
+      align-items: center;
 
-      img{
+      img {
+        margin-top: 7vh;
         margin-bottom: 3vh;
+        width: 8vw;
+
       }
+      article:not(.last){
+        border-top: 2px solid $secondaryColor;
+      }
+      article {
+        display: flex;
+        flex-direction: column;
+        padding-right: 3vw;
+
+        span {
+          font-weight: bold;
+        }
+
+        &:before {
+          content: "";
+          width: 2vw;
+          height: 2vw;
+          border-radius: 50%;
+          background: white;
+          position: relative;
+          top: -2.3vh;
+          border: 2px solid $primaryColor;
+          box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+        }
+      }
+
+
     }
   }
 }
