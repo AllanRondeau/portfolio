@@ -15,24 +15,27 @@ import {BehaviorSubject} from "rxjs";
                   <h3>My Projects</h3>
                   <hr>
                 </header>
-                <article id="projectBox">
-                  <ng-container *ngFor="let p of projectOnHomePage.projects ; let i = index">
-                    <article class="projects">
-                      <article>
-                        <img src="{{p.filePathImage}}" alt="">
-                        <h4>{{p.projectTitle}}</h4>
-                        <button [attr.id]="'DetailsBtn'+i" (click)="showDetailsBtn(i)" *ngIf="showDetails != i">See more
-                        </button>
+                <div *ngIf="projectState.error == true else errorOk">An error occured while fetching datas. Please try again.</div>
+                <ng-template #errorOk>
+                  <article id="projectBox">
+                    <ng-container *ngFor="let p of projectOnHomePage.projects ; let i = index">
+                      <article class="projects">
+                        <article>
+                          <img src="{{p.filePathImage}}" alt="">
+                          <h4>{{p.projectTitle}}</h4>
+                          <button [attr.id]="'DetailsBtn'+i" (click)="showDetailsBtn(i)" *ngIf="showDetails != i">See more
+                          </button>
+                        </article>
+                        <article class="projectDetails" *ngIf="showDetails===i">
+                          <p>Date project:<i>{{p.projectStartDate}} - {{p.projectEndDate}}</i></p>
+                          <p>Techs used: <i>{{p.projectTechnology}}</i></p>
+                          <p>{{p.projectSummary}}</p>
+                          <button (click)="hookDetailsBtn()">Close</button>
+                        </article>
                       </article>
-                      <article class="projectDetails" *ngIf="showDetails===i">
-                        <p>Date project:<i>{{p.projectStartDate}} - {{p.projectEndDate}}</i></p>
-                        <p>Techs used: <i>{{p.projectTechnology}}</i></p>
-                        <p>{{p.projectSummary}}</p>
-                        <button (click)="hookDetailsBtn()">Close</button>
-                      </article>
-                    </article>
-                  </ng-container>
-                </article>
+                    </ng-container>
+                  </article>
+                </ng-template>
               </ng-container>
             </ng-container>
           </section>
@@ -44,7 +47,9 @@ export class ProjectSectionComponent {
     projectComponentState: BehaviorSubject<ProjectComponentState> = new BehaviorSubject(
         new ProjectComponentState(
             true,
-            new DisplayProject([])
+            new DisplayProject([]),
+            undefined,
+            false
         )
     );
 
@@ -58,7 +63,9 @@ export class ProjectSectionComponent {
                     false, // when loading is finish, display project on screen
                     new DisplayProject(
                         projects
-                    )
+                    ),
+                    undefined,
+                        false
                 )
             );
             // for developper logs
@@ -71,7 +78,8 @@ export class ProjectSectionComponent {
                     new DisplayProject(
                         [],
                     ),
-                    "A technical error occured :" + rejectionCause
+                    "A technical error occured :" + rejectionCause,
+                    true
                 )
             );
         });
@@ -94,7 +102,8 @@ export class ProjectComponentState {
 
     constructor(readonly isLoading: boolean,
                 readonly projectOnPage: DisplayProject,
-                readonly technicalError?: string) {
+                readonly technicalError?: string,
+                readonly error?: boolean) {
     }
 
 }
