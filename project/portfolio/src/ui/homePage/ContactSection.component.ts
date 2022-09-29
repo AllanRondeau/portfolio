@@ -16,7 +16,7 @@ import {ChangeDetectionStrategy, Component} from "@angular/core";
             <input type="text" name="name" placeholder="Full name">
             <input type="text" name="email" placeholder="Email">
             <input type="text" name="object" placeholder="Object">
-            <textarea name="content" placeholder="Write your message"></textarea>
+            <textarea name="content" placeholder="Write your message."></textarea>
           </form>
         </article>
       </section>

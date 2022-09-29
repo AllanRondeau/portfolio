@@ -1,6 +1,7 @@
 #contact{
   article{
     @extend %displayFlexRow;
+    margin-bottom: 3vh;
 
     div{
       background-image: url("../images/contactImage.jpg");
@@ -17,6 +18,26 @@
   }
 }
 
+@media(max-width: $md-screen){
+  #contact{
+    article{
+      div{
+        height: 40vh;
+      }
+    }
+  }
+}
+
+@media(max-width: $sm-screen){
+  #contact{
+    article{
+      div{
+        height: 30vh;
+      }
+    }
+  }
+}
+
 @media(max-width: $xs-screen){
   #contact{
     article{
@@ -25,7 +46,8 @@
         flex-direction: column;
         align-items: center;
         flex-basis: unset;
-        margin-left: 3vw;
+        margin-top: 0;
+
       }
       div{
         display: none;

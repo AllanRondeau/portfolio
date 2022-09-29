@@ -167,8 +167,14 @@ button {
 }
 
 @media (max-width: 560px) {
-  select, input {
+  select {
     font-size: 2.5vw;
+  }
+  input {
+    font-size: 2.3vw;
+  }
+  textarea {
+    font-size: 1.9vw;
   }
   h1 {
     font-size: 9vw;
@@ -332,6 +338,15 @@ button {
   border-radius: 10px;
 }
 
+@media (max-width: 560px) {
+  #contact form input {
+    width: 40vw;
+    margin: 3vh 0;
+  }
+  #contact form textarea {
+    width: 45vw;
+  }
+}
 #home {
   width: 100vw;
 }
@@ -595,6 +610,9 @@ button {
     content: unset;
   }
 }
+#contact article {
+  margin-bottom: 3vh;
+}
 #contact article div {
   background-image: url("../images/contactImage.jpg");
   background-size: cover;
@@ -607,13 +625,23 @@ button {
   margin-top: 7vh;
 }
 
+@media (max-width: 992px) {
+  #contact article div {
+    height: 40vh;
+  }
+}
+@media (max-width: 768px) {
+  #contact article div {
+    height: 30vh;
+  }
+}
 @media (max-width: 560px) {
   #contact article form {
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-basis: unset;
-    margin-left: 3vw;
+    margin-top: 0;
   }
   #contact article div {
     display: none;

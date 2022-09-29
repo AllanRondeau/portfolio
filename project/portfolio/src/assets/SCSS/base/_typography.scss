@@ -148,8 +148,16 @@ button {
 }
 
 @media(max-width: $xs-screen) {
-  select, input {
+  select{
     font-size: font-size-adjust(25);
+  }
+
+  input {
+    font-size: font-size-adjust(23);
+  }
+
+  textarea {
+    font-size: font-size-adjust(19);
   }
   h1 {
     font-size: font-size-adjust(90);
