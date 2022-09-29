@@ -52,7 +52,7 @@
 @media (max-width: $xs-screen) {
   #aboutMe{
     header{
-      margin-bottom: 8vh;
+      margin-bottom: 2vh;
     }
     div{
       flex-direction: column;
@@ -60,14 +60,13 @@
       flex-basis: unset;
 
       #profilePic{
-        width: 25vw;
-        height: 35vh;
+        width: 40vw;
+        height: 15vh;
       }
 
       article{
         margin: 0;
         p{
-          margin-top: 5vh;
           width: 60vw;
         }
       }

@@ -7,6 +7,7 @@ import {ProjectSectionComponent} from "./homePage/ProjectSection";
 import {AboutSectionComponent} from "./homePage/AboutSection";
 import {TechsSectionComponent} from "./homePage/TechsSection";
 import {FormsModule} from "@angular/forms";
+import { ContactSectionComponent } from "./homePage/ContactSection.component";
 
 
 
@@ -20,7 +21,8 @@ import {FormsModule} from "@angular/forms";
         HomeSectionComponent,
         ProjectSectionComponent,
         AboutSectionComponent,
-        TechsSectionComponent
+        TechsSectionComponent,
+        ContactSectionComponent
     ],
     providers: [
         {provide: "AsyncProjectRepository", useClass: HttpProjectRepository},

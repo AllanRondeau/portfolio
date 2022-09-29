@@ -1,0 +1,17 @@
+#contact{
+  form{
+    input{
+      margin: 5vh 3vw;
+      border: none;
+      border-bottom: 2px solid $primaryColor;
+      width: 20vw;
+    }
+    textarea{
+      width: 23vw;
+      height: 15vh;
+      margin-left: 2vw;
+      border: 2px solid $primaryColor;
+      border-radius: 10px;
+    }
+  }
+}

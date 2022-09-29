@@ -35,8 +35,16 @@ a {
   font-size: font-size-adjust(12);
 }
 
-select, input {
+select {
   font-size: font-size-adjust(15);
+}
+
+input {
+  font-size: font-size-adjust(13);
+}
+
+textarea {
+  font-size: font-size-adjust(10);
 }
 
 p {
@@ -73,8 +81,15 @@ button {
   h6 {
     font-size: font-size-adjust(17);
   }
-  select, input {
+  select {
     font-size: font-size-adjust(21);
+  }
+  input {
+    font-size: font-size-adjust(16);
+  }
+
+  textarea {
+    font-size: font-size-adjust(13);
   }
 
   button {
@@ -103,8 +118,15 @@ button {
     font-size: font-size-adjust(30);
   }
 
-  select, input {
+  select {
     font-size: font-size-adjust(20);
+  }
+  input {
+    font-size: font-size-adjust(19);
+  }
+
+  textarea {
+    font-size: font-size-adjust(16);
   }
 
   article button {
@@ -142,7 +164,7 @@ button {
     font-size: font-size-adjust(40);
   }
   p {
-    font-size: font-size-adjust(18);
+    font-size: font-size-adjust(23);
   }
   #aboutMe p {
     font-size: font-size-adjust(30);
@@ -151,7 +173,7 @@ button {
     font-size: font-size-adjust(24);
   }
 
-  h6{
+  h6 {
     font-size: font-size-adjust(22);
   }
 }
