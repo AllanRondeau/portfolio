@@ -97,6 +97,9 @@ button {
   h4 {
     font-size: 1.7vw;
   }
+  h6 {
+    font-size: 1.7vw;
+  }
   select, input {
     font-size: 2.1vw;
   }
@@ -167,6 +170,9 @@ button {
   }
   a {
     font-size: 2.4vw;
+  }
+  h6 {
+    font-size: 2.2vw;
   }
 }
 html {
@@ -512,6 +518,44 @@ button {
   top: -2.3vh;
   border: 2px solid #72E3AF;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 560px) {
+  #techs article {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 7vh;
+  }
+  #techs article .techsDetails {
+    display: flex;
+    flex-direction: row;
+    width: 70vw;
+    border-left: 2px solid #2AD587;
+  }
+  #techs article .techsDetails:before {
+    content: "";
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid #2AD587;
+    position: relative;
+    left: -1.3vw;
+    top: -3vh;
+  }
+  #techs article .techsDetails img {
+    width: 13vw;
+  }
+  #techs article .techsDetails article:not(.last) {
+    border-top: none;
+  }
+  #techs article .techsDetails article {
+    padding-right: 0;
+    width: 40vw;
+  }
+  #techs article .techsDetails article:before {
+    content: unset;
+  }
 }
 
 /*# sourceMappingURL=output.css.map */

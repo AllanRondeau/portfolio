@@ -17,9 +17,11 @@
         width: 8vw;
 
       }
-      article:not(.last){
+
+      article:not(.last) {
         border-top: 2px solid $secondaryColor;
       }
+
       article {
         display: flex;
         flex-direction: column;
@@ -38,11 +40,57 @@
           position: relative;
           top: -2.3vh;
           border: 2px solid $primaryColor;
-          box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+          box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
         }
       }
+    }
+  }
+}
+
+@media(max-width: $xs-screen) {
+  #techs {
+    article {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 7vh;
 
 
+      .techsDetails {
+        display: flex;
+        flex-direction: row;
+        width: 70vw;
+        border-left: 2px solid $secondaryColor;
+        &:before{
+          content: "";
+          width: 3vw;
+          height: 3vw;
+          border-radius: 50%;
+          background-color: white;
+          border: 2px solid $secondaryColor;
+          position: relative;
+          left: -1.3vw;
+          top: -3vh;
+        }
+
+        img {
+          width: 13vw;
+
+        }
+
+        article:not(.last) {
+          border-top: none;
+        }
+
+        article {
+          padding-right: 0;
+          width: 40vw;
+          &:before {
+            content: unset;
+          }
+        }
+
+
+      }
     }
   }
 }

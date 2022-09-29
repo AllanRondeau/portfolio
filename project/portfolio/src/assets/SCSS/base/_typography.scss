@@ -27,7 +27,7 @@ h4 {
   font-style: italic;
 }
 
-h6{
+h6 {
   font-size: font-size-adjust(15);
 }
 
@@ -70,6 +70,9 @@ button {
     font-size: font-size-adjust(17);
   }
 
+  h6 {
+    font-size: font-size-adjust(17);
+  }
   select, input {
     font-size: font-size-adjust(21);
   }
@@ -141,11 +144,15 @@ button {
   p {
     font-size: font-size-adjust(18);
   }
-  #aboutMe p{
+  #aboutMe p {
     font-size: font-size-adjust(30);
   }
   a {
     font-size: font-size-adjust(24);
+  }
+
+  h6{
+    font-size: font-size-adjust(22);
   }
 }
 
