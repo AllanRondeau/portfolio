@@ -26,10 +26,10 @@
       background-color: $secondaryColor;
 
     }
-    .projectsDetails {
-      transition: transform 1s;
-      -webkit-transition: height 1s;
+    .projectDetails {
+      transition: all .35s ease .35s;
     }
+
   }
 }
 

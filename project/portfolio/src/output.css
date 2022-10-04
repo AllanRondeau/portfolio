@@ -311,9 +311,8 @@ button {
   color: white;
   background-color: #2AD587;
 }
-#projectSection .projects .projectsDetails {
-  transition: transform 1s;
-  -webkit-transition: height 1s;
+#projectSection .projects .projectDetails {
+  transition: all 0.35s ease 0.35s;
 }
 
 @media (max-width: 560px) {

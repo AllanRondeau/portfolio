@@ -3,6 +3,7 @@ import {AsyncProjectRepository} from "../../application/AsyncProjectRepository";
 import {DisplayProject} from "../../application/DisplayProject";
 import {AppComponentState} from "../App.component";
 import {BehaviorSubject} from "rxjs";
+import {animate, transition } from "@angular/animations";
 
 @Component({
         changeDetection: ChangeDetectionStrategy.OnPush,
@@ -26,7 +27,7 @@ import {BehaviorSubject} from "rxjs";
                           <button [attr.id]="'DetailsBtn'+i" (click)="showDetailsBtn(i)" *ngIf="showDetails != i">See more
                           </button>
                         </article>
-                        <article class="projectDetails" *ngIf="showDetails===i">
+                        <article class="projectDetails" *ngIf="showDetails===i" >
                           <p>Date project:<i>{{p.projectStartDate}} - {{p.projectEndDate}}</i></p>
                           <p>Techs used: <i>{{p.projectTechnology}}</i></p>
                           <p>{{p.projectSummary}}</p>
