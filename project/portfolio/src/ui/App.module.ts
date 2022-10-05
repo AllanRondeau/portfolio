@@ -8,6 +8,7 @@ import {AboutSectionComponent} from "./homePage/AboutSection";
 import {TechsSectionComponent} from "./homePage/TechsSection";
 import {FormsModule} from "@angular/forms";
 import { ContactSectionComponent } from "./homePage/ContactSection.component";
+import {HttpClientModule} from "@angular/common/http";
 
 
 
@@ -15,6 +16,7 @@ import { ContactSectionComponent } from "./homePage/ContactSection.component";
     imports: [
         BrowserModule,
         FormsModule,
+        HttpClientModule
     ],
     declarations: [
         AppComponent,
