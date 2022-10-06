@@ -9,6 +9,7 @@ import {TechsSectionComponent} from "./homePage/TechsSection";
 import {FormsModule} from "@angular/forms";
 import { ContactSectionComponent } from "./homePage/ContactSection.component";
 import {HttpClientModule} from "@angular/common/http";
+import {CreateMessage} from "../application/CreateMessage";
 
 
 
@@ -27,7 +28,7 @@ import {HttpClientModule} from "@angular/common/http";
         ContactSectionComponent
     ],
     providers: [
-        {provide: "AsyncProjectRepository", useClass: HttpProjectRepository},
+        {provide: "AsyncProjectRepository", useClass: HttpProjectRepository}
     ],
     bootstrap: [
         AppComponent,

@@ -4,8 +4,12 @@ import {GenerateCommand} from "@angular/cli/commands/generate-impl";
 
 export class CreateMessage{
     readonly messageComplete: boolean = false;
-    constructor(readonly message?: Message,
-                readonly generalError?: string) {
+    constructor(readonly name?: string,
+                readonly email?: string,
+                readonly object?: string,
+                readonly content?: string,
+                readonly generalError?: string,
+                private message?: Message) {
 
         if (message?.name.length === 0
             || message?.email.length === 0
@@ -17,6 +21,9 @@ export class CreateMessage{
             this.generalError = undefined;
             this.messageComplete = true;
         }
+    }
+    toMessage(name: string, email: string, object: string, content: string){
+        this.message = new Message(name, email, object, content);
     }
 }
 

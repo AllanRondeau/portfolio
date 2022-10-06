@@ -1,6 +1,6 @@
-import {ChangeDetectionStrategy, Component} from "@angular/core";
+import {ChangeDetectionStrategy, Component, inject, Inject} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 import {CreateMessage} from "../../application/CreateMessage";
 
 
@@ -15,48 +15,77 @@ import {CreateMessage} from "../../application/CreateMessage";
         </header>
         <article>
           <div></div>
-          <form action="ContactSection.component.ts">
+          <form>
             <input #name type="text" name="name" (change)="createMessageName(name.value)" placeholder="Full name">
             <input #email type="text" name="email" (change)="createMessageEmail(email.value)" placeholder="Email">
             <input #object type="text" name="object" (change)="createMessageObject(object.value)" placeholder="Object">
-            <textarea #content name="content" (change)="createMessageContent(content.value)" placeholder="Write your message."></textarea>
+            <textarea #content name="content" (change)="createMessageContent(content.value)"
+                      placeholder="Write your message."></textarea>
+            <button (click)="createCompleteMessage()">Send message !</button>
           </form>
         </article>
       </section>
     `
 })
 
-export class ContactSectionComponent {
+export class ContactSectionComponent{
     readonly ROOT_URL = "backend_v2/portfolio_angular_cli/project/portfolio/src/infrastructure/php/insertMessage.php";
-    messageEnCour = new CreateMessage();
-    // posts: Observable<any>;
-    constructor(private http: HttpClient) {
-        // createPostsMessage(){
-        //
-        //     this.posts = this.http.get<post>()
-        // }
+    // CreateNewMessage = new CreateMessage();
+    // componentState: BehaviorSubject<ContactSectionComponentState> = new BehaviorSubject(
+    //     new ContactSectionComponentState(
+    //         new CreateMessage()
+    //     )
+    // );
+    posts?: Observable<any>;
+
+    constructor(@Inject(String)private nameMessage: string,
+                private emailMessage: string,
+                private contentMessage: string,
+                private objectMessage: string,
+                private generalError: string,
+                private messageComplete: CreateMessage,
+                private http: HttpClient) {
     }
-    createMessageName(name: string){
-        console.info("name : ", name);
-        return name;
+
+    createPostsMessage() {
+
+        // this.posts = this.http.post(this.ROOT_URL + '/posts', )
     }
-    createMessageEmail(email: string){
-        console.info("email: ", email);
-        return email;
+
+    createMessageName(name: string) {
+        this.nameMessage = name;
     }
-    createMessageObject(object: string){
-        console.info("object", object);
-        return object;
+
+    createMessageEmail(email: string) {
+        this.emailMessage = email;
     }
-    createMessageContent(content: string){
-        console.info("content", content);
-        return content;
+
+    createMessageObject(object: string) {
+        this.objectMessage = object;
+    }
+
+    createMessageContent(content: string) {
+        this.contentMessage = content;
+    }
+
+    createCompleteMessage() {
+        if (this.nameMessage.length !== 0 &&
+            this.emailMessage.length !== 0 &&
+            this.objectMessage.length !== 0 &&
+            this.contentMessage.length !== 0) {
+            this.messageComplete.toMessage(this.nameMessage!, this.emailMessage!, this.objectMessage!, this.objectMessage!);
+            console.info(this.messageComplete);
+        }else{
+            console.info("error");
+        }
+
     }
 }
 
-export interface Post{
-    name: string;
-    email: string;
-    object: string;
-    content: string;
+export class ContactSectionComponentState {
+    constructor(readonly messageInCreation: CreateMessage,
+                readonly technicalError?: string) {
+    }
 }
+
+
