@@ -1,6 +1,6 @@
-import {ChangeDetectionStrategy, Component, inject, Inject} from "@angular/core";
+import {ChangeDetectionStrategy, Component} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {BehaviorSubject, Observable} from "rxjs";
+import {Observable} from "rxjs";
 import {CreateMessage} from "../../application/CreateMessage";
 
 
@@ -16,9 +16,11 @@ import {CreateMessage} from "../../application/CreateMessage";
         <article>
           <div></div>
           <form>
-            <input #name type="text" name="name" (change)="createMessageName(name.value)" placeholder="Full name">
+            <input #name type="text" name="name" (change)="createMessageName(name.value)"
+                   placeholder="Full name">
             <input #email type="text" name="email" (change)="createMessageEmail(email.value)" placeholder="Email">
-            <input #object type="text" name="object" (change)="createMessageObject(object.value)" placeholder="Object">
+            <input #object type="text" name="object" (change)="createMessageObject(object.value)"
+                   placeholder="Object">
             <textarea #content name="content" (change)="createMessageContent(content.value)"
                       placeholder="Write your message."></textarea>
             <button (click)="createCompleteMessage()">Send message !</button>
@@ -28,23 +30,20 @@ import {CreateMessage} from "../../application/CreateMessage";
     `
 })
 
-export class ContactSectionComponent{
+export class ContactSectionComponent {
     readonly ROOT_URL = "backend_v2/portfolio_angular_cli/project/portfolio/src/infrastructure/php/insertMessage.php";
     // CreateNewMessage = new CreateMessage();
-    // componentState: BehaviorSubject<ContactSectionComponentState> = new BehaviorSubject(
-    //     new ContactSectionComponentState(
-    //         new CreateMessage()
-    //     )
-    // );
+    componentValue: ContactSectionComponentValue =
+        new ContactSectionComponentValue(
+            "",
+            "",
+            "",
+            "",
+            new CreateMessage()
+        );
     posts?: Observable<any>;
 
-    constructor(@Inject(String)private nameMessage: string,
-                private emailMessage: string,
-                private contentMessage: string,
-                private objectMessage: string,
-                private generalError: string,
-                private messageComplete: CreateMessage,
-                private http: HttpClient) {
+    constructor(private http: HttpClient) {
     }
 
     createPostsMessage() {
@@ -53,39 +52,75 @@ export class ContactSectionComponent{
     }
 
     createMessageName(name: string) {
-        this.nameMessage = name;
+        console.info(name);
+        this.componentValue.withMessageName(name);
     }
 
     createMessageEmail(email: string) {
-        this.emailMessage = email;
+        this.componentValue.withMessageEmail(email);
     }
 
     createMessageObject(object: string) {
-        this.objectMessage = object;
+        this.componentValue.withMessageObject(object);
     }
 
     createMessageContent(content: string) {
-        this.contentMessage = content;
+        this.componentValue.withMessageContent(content);
     }
-
     createCompleteMessage() {
-        if (this.nameMessage.length !== 0 &&
-            this.emailMessage.length !== 0 &&
-            this.objectMessage.length !== 0 &&
-            this.contentMessage.length !== 0) {
-            this.messageComplete.toMessage(this.nameMessage!, this.emailMessage!, this.objectMessage!, this.objectMessage!);
-            console.info(this.messageComplete);
-        }else{
+        if (this.componentValue.getNameMessage().length !== 0 &&
+            this.componentValue.getEmailMessage().length !== 0 &&
+            this.componentValue.getObjectMessage().length !== 0 &&
+            this.componentValue.getContentMessage().length !== 0) {
+            this.componentValue.getMessageComplete()?.toMessage(this.componentValue.getNameMessage(),
+                                                                this.componentValue.getEmailMessage(),
+                                                                this.componentValue.getObjectMessage(),
+                                                                this.componentValue.getContentMessage());
+            console.info(this.componentValue.getMessageComplete().getMessage());
+        } else {
             console.info("error");
         }
-
     }
 }
 
-export class ContactSectionComponentState {
-    constructor(readonly messageInCreation: CreateMessage,
-                readonly technicalError?: string) {
+export class ContactSectionComponentValue {
+    constructor(private nameMessage: string,
+                private emailMessage: string,
+                private contentMessage: string,
+                private objectMessage: string,
+                private messageComplete: CreateMessage,
+                private generalError?: string) {
     }
+
+    withMessageName(name: string) {
+        return this.nameMessage = name;
+    }
+    withMessageEmail(email: string) {
+        return this.emailMessage = email;
+    }
+    withMessageObject(object: string) {
+        return this.objectMessage = object;
+    }
+    withMessageContent(content: string) {
+        return this.contentMessage = content;
+    }
+    getNameMessage(){
+        return this.nameMessage;
+    }
+    getEmailMessage(){
+        return this.emailMessage;
+    }
+    getObjectMessage(){
+        return this.objectMessage;
+    }
+    getContentMessage(){
+        return this.contentMessage;
+    }
+    getMessageComplete(){
+        return this.messageComplete;
+    }
+
 }
+
 
 
