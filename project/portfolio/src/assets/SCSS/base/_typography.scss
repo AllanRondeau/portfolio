@@ -54,7 +54,9 @@ p {
     color: $primaryColor;
   }
 }
-
+.error{
+  color: red;
+}
 #aboutMe p {
   font-size: font-size-adjust(19);
 

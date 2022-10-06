@@ -24,6 +24,7 @@ import {CreateMessage} from "../../application/CreateMessage";
             <textarea #content name="content" (change)="createMessageContent(content.value)"
                       placeholder="Write your message."></textarea>
             <button (click)="createCompleteMessage()">Send message !</button>
+            <p class="error" >{{componentValue.getGeneralError()}}</p>
           </form>
         </article>
       </section>
@@ -39,7 +40,7 @@ export class ContactSectionComponent {
             "",
             "",
             "",
-            new CreateMessage()
+            new CreateMessage(),
         );
     posts?: Observable<any>;
 
@@ -76,9 +77,9 @@ export class ContactSectionComponent {
                                                                 this.componentValue.getEmailMessage(),
                                                                 this.componentValue.getObjectMessage(),
                                                                 this.componentValue.getContentMessage());
-            console.info(this.componentValue.getMessageComplete().getMessage());
+            this.componentValue.setGeneralError(undefined);
         } else {
-            console.info("error");
+            this.componentValue.setGeneralError("Please be sure to fill all the form cases.");
         }
     }
 }
@@ -118,6 +119,12 @@ export class ContactSectionComponentValue {
     }
     getMessageComplete(){
         return this.messageComplete;
+    }
+    getGeneralError(){
+        return this.generalError;
+    }
+    setGeneralError(error?: string){
+        this.generalError = error;
     }
 
 }

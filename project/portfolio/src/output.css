@@ -84,6 +84,10 @@ p i {
   color: #72E3AF;
 }
 
+.error {
+  color: red;
+}
+
 #aboutMe p {
   font-size: 1.9vw;
 }
