@@ -262,6 +262,37 @@ button {
   padding: 1.2vw;
 }
 
+#contact button {
+  background-color: white;
+  color: #2AD587;
+  border: 1px solid #2AD587;
+  padding: 2vh 1vw;
+  letter-spacing: 1px;
+  transition: all 0.35s;
+  text-align: center;
+  position: relative;
+}
+#contact button span {
+  position: relative;
+  z-index: 2;
+}
+#contact button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #2AD587;
+  transition: all 0.35s;
+}
+#contact button:hover {
+  color: white;
+}
+#contact button:hover::after {
+  width: 100%;
+}
+
 #home header {
   border: 2px solid #72E3AF;
   transform: skew(-15deg);
@@ -628,7 +659,7 @@ button {
   margin-top: 7vh;
 }
 #contact article form button {
-  margin: 0 auto;
+  margin-left: 3vw;
 }
 
 @media (max-width: 992px) {

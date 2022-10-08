@@ -23,8 +23,8 @@ import {CreateMessage} from "../../application/CreateMessage";
                    placeholder="Object">
             <textarea #content name="content" (change)="createMessageContent(content.value)"
                       placeholder="Write your message."></textarea>
-            <button (click)="createCompleteMessage()">Send message !</button>
-            <p class="error" >{{componentValue.getGeneralError()}}</p>
+            <button (click)="createCompleteMessage()"><span>Send message !</span></button>
+            <p class="error">{{componentValue.getGeneralError()}}</p>
           </form>
         </article>
       </section>
@@ -68,15 +68,19 @@ export class ContactSectionComponent {
     createMessageContent(content: string) {
         this.componentValue.withMessageContent(content);
     }
+
     createCompleteMessage() {
         if (this.componentValue.getNameMessage().length !== 0 &&
             this.componentValue.getEmailMessage().length !== 0 &&
             this.componentValue.getObjectMessage().length !== 0 &&
             this.componentValue.getContentMessage().length !== 0) {
-            this.componentValue.getMessageComplete()?.toMessage(this.componentValue.getNameMessage(),
-                                                                this.componentValue.getEmailMessage(),
-                                                                this.componentValue.getObjectMessage(),
-                                                                this.componentValue.getContentMessage());
+            const data: Post = {
+                name: this.componentValue.getNameMessage(),
+                email: this.componentValue.getEmailMessage(),
+                object: this.componentValue.getObjectMessage(),
+                content: this.componentValue.getContentMessage()
+            };
+            console.info(data);
             this.componentValue.setGeneralError(undefined);
         } else {
             this.componentValue.setGeneralError("Please be sure to fill all the form cases.");
@@ -96,38 +100,53 @@ export class ContactSectionComponentValue {
     withMessageName(name: string) {
         return this.nameMessage = name;
     }
+
     withMessageEmail(email: string) {
         return this.emailMessage = email;
     }
+
     withMessageObject(object: string) {
         return this.objectMessage = object;
     }
+
     withMessageContent(content: string) {
         return this.contentMessage = content;
     }
-    getNameMessage(){
+
+    getNameMessage() {
         return this.nameMessage;
     }
-    getEmailMessage(){
+
+    getEmailMessage() {
         return this.emailMessage;
     }
-    getObjectMessage(){
+
+    getObjectMessage() {
         return this.objectMessage;
     }
-    getContentMessage(){
+
+    getContentMessage() {
         return this.contentMessage;
     }
-    getMessageComplete(){
+
+    getMessageComplete() {
         return this.messageComplete;
     }
-    getGeneralError(){
+
+    getGeneralError() {
         return this.generalError;
     }
-    setGeneralError(error?: string){
+
+    setGeneralError(error?: string) {
         this.generalError = error;
     }
 
 }
 
-
+export interface Post {
+    name: string;
+    email: string;
+    object: string;
+    content: string;
+}
 
