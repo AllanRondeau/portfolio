@@ -10,6 +10,8 @@ import {FormsModule} from "@angular/forms";
 import { ContactSectionComponent } from "./homePage/ContactSection.component";
 import {HttpClientModule} from "@angular/common/http";
 import {CreateMessage} from "../application/CreateMessage";
+import { AlertService } from "./alert.service";
+import { HttpErrorHandler } from "./errorHandler.service";
 
 
 
@@ -28,7 +30,9 @@ import {CreateMessage} from "../application/CreateMessage";
         ContactSectionComponent
     ],
     providers: [
-        {provide: "AsyncProjectRepository", useClass: HttpProjectRepository}
+        {provide: "AsyncProjectRepository", useClass: HttpProjectRepository},
+        AlertService,
+        HttpErrorHandler
     ],
     bootstrap: [
         AppComponent,

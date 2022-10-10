@@ -1,8 +1,7 @@
-import {ChangeDetectionStrategy, Component} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
+import {ChangeDetectionStrategy, Component, Injectable} from "@angular/core";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {CreateMessage} from "../../application/CreateMessage";
-
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -31,6 +30,9 @@ import {CreateMessage} from "../../application/CreateMessage";
     `
 })
 
+
+
+@Injectable()
 export class ContactSectionComponent {
     readonly ROOT_URL = "backend_v2/portfolio_angular_cli/project/portfolio/src/infrastructure/php/insertMessage.php";
     // CreateNewMessage = new CreateMessage();
@@ -45,11 +47,6 @@ export class ContactSectionComponent {
     posts?: Observable<any>;
 
     constructor(private http: HttpClient) {
-    }
-
-    createPostsMessage() {
-
-        // this.posts = this.http.post(this.ROOT_URL + '/posts', )
     }
 
     createMessageName(name: string) {
@@ -69,23 +66,25 @@ export class ContactSectionComponent {
         this.componentValue.withMessageContent(content);
     }
 
+
     createCompleteMessage() {
         if (this.componentValue.getNameMessage().length !== 0 &&
             this.componentValue.getEmailMessage().length !== 0 &&
             this.componentValue.getObjectMessage().length !== 0 &&
             this.componentValue.getContentMessage().length !== 0) {
-            const data: Post = {
+            const data: Message = {
                 name: this.componentValue.getNameMessage(),
                 email: this.componentValue.getEmailMessage(),
                 object: this.componentValue.getObjectMessage(),
                 content: this.componentValue.getContentMessage()
             };
-            console.info(data);
             this.componentValue.setGeneralError(undefined);
+            console.info(this.posts);
         } else {
             this.componentValue.setGeneralError("Please be sure to fill all the form cases.");
         }
     }
+
 }
 
 export class ContactSectionComponentValue {
@@ -143,10 +142,11 @@ export class ContactSectionComponentValue {
 
 }
 
-export interface Post {
+export interface Message {
     name: string;
     email: string;
     object: string;
     content: string;
 }
+
 
