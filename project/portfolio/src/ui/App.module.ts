@@ -12,6 +12,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {CreateMessage} from "../application/CreateMessage";
 import { AlertService } from "./alert.service";
 import { HttpErrorHandler } from "./errorHandler.service";
+import { MessageService } from "./homePage/ContactSection.service";
 
 
 
@@ -32,7 +33,8 @@ import { HttpErrorHandler } from "./errorHandler.service";
     providers: [
         {provide: "AsyncProjectRepository", useClass: HttpProjectRepository},
         AlertService,
-        HttpErrorHandler
+        HttpErrorHandler,
+        MessageService
     ],
     bootstrap: [
         AppComponent,

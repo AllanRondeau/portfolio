@@ -2,6 +2,7 @@ import {ChangeDetectionStrategy, Component, Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {CreateMessage} from "../../application/CreateMessage";
+import { MessageService } from "./ContactSection.service";
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -46,11 +47,10 @@ export class ContactSectionComponent {
         );
     posts?: Observable<any>;
 
-    constructor(private http: HttpClient) {
+    constructor(private messageService: MessageService) {
     }
 
     createMessageName(name: string) {
-        console.info(name);
         this.componentValue.withMessageName(name);
     }
 
@@ -66,7 +66,6 @@ export class ContactSectionComponent {
         this.componentValue.withMessageContent(content);
     }
 
-
     createCompleteMessage() {
         if (this.componentValue.getNameMessage().length !== 0 &&
             this.componentValue.getEmailMessage().length !== 0 &&
@@ -78,8 +77,9 @@ export class ContactSectionComponent {
                 object: this.componentValue.getObjectMessage(),
                 content: this.componentValue.getContentMessage()
             };
+            const jsonData = JSON.stringify(data);
+            this.messageService.addMessage(jsonData).subscribe(response => console.log("it's good"))
             this.componentValue.setGeneralError(undefined);
-            console.info(this.posts);
         } else {
             this.componentValue.setGeneralError("Please be sure to fill all the form cases.");
         }

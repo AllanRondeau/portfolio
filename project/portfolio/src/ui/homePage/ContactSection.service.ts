@@ -4,21 +4,6 @@ import { Observable } from 'rxjs';
 import { HandleError, HttpErrorHandler } from '../errorHandler.service';
 import { catchError } from 'rxjs/operators';
 
-// @Injectable()
-// export class ConfigService{
-//     configurl = '././assets/jsonRoot/messageRoot.json';
-//     constructor(private http: HttpClient) { }
-//
-//     getConfig(){
-//         return this.http.get<Config>(this.configurl);
-//     }
-//
-// }
-//
-// export interface Config{
-//     messageUrl : string;
-// }
-
 const httpOptions = {
     headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -34,8 +19,8 @@ export class MessageService{
         this.handleError = httpErrorHandler.createHandleError('messageService')
     }
     private error: string = "";
-    addMessage(message: Message): Observable<Message>{
-        return this.http.post<Message>(this.messageUrl, message, httpOptions)
+    addMessage(message: string): Observable<string>{
+        return this.http.post<string>(this.messageUrl, message, httpOptions)
             .pipe(
                 catchError(this.handleError('addMessage', message))
             );

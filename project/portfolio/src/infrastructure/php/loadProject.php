@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: application/json; charset=utf-8');
+    header('Content-Type: application/json; charset=utf-8');
 
 include('connexion.php');
 $co = connexionBdd();
@@ -18,4 +18,4 @@ while ($result = $query->fetch()) {
         "projectTechnology" => $result[6],
     ];
 }
-echo json_encode($arrayobj);
+json_encode($arrayobj);
