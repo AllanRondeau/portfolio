@@ -18,4 +18,4 @@ while ($result = $query->fetch()) {
         "projectTechnology" => $result[6],
     ];
 }
-json_encode($arrayobj);
+echo json_encode($arrayobj);

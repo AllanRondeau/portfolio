@@ -78,7 +78,7 @@ export class ContactSectionComponent {
                 content: this.componentValue.getContentMessage()
             };
             const jsonData = JSON.stringify(data);
-            this.messageService.addMessage(jsonData).subscribe(response => console.log("it's good"))
+            this.messageService.addMessage(jsonData).subscribe(response => console.log("it's good"));
             this.componentValue.setGeneralError(undefined);
         } else {
             this.componentValue.setGeneralError("Please be sure to fill all the form cases.");
