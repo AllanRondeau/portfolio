@@ -71,15 +71,15 @@ export class ContactSectionComponent {
             this.componentValue.getEmailMessage().length !== 0 &&
             this.componentValue.getObjectMessage().length !== 0 &&
             this.componentValue.getContentMessage().length !== 0) {
-            const data: Message = {
+            const data: MessageInt = {
                 name: this.componentValue.getNameMessage(),
                 email: this.componentValue.getEmailMessage(),
                 object: this.componentValue.getObjectMessage(),
                 content: this.componentValue.getContentMessage()
             };
             const jsonData = JSON.stringify(data);
-            this.messageService.addMessage(jsonData).subscribe(data => console.log('succes', data),
-                                                                error => console.log('oops', error));
+            this.messageService.addMessage(jsonData).subscribe(data => console.log("succes", data),
+                                                                error => console.log("oops", error));
             this.componentValue.setGeneralError(undefined);
         } else {
             this.componentValue.setGeneralError("Please be sure to fill all the form cases.");
@@ -143,7 +143,7 @@ export class ContactSectionComponentValue {
 
 }
 
-export interface Message {
+export interface MessageInt {
     name: string;
     email: string;
     object: string;
