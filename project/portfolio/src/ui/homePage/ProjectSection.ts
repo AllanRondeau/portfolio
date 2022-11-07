@@ -1,7 +1,6 @@
 import {ChangeDetectionStrategy, Component, Inject} from "@angular/core";
 import {AsyncProjectRepository} from "../../application/AsyncProjectRepository";
 import {DisplayProject} from "../../application/DisplayProject";
-import {AppComponentState} from "../App.component";
 import {BehaviorSubject} from "rxjs";
 import {animate, transition } from "@angular/animations";
 
