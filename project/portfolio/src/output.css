@@ -57,6 +57,10 @@ h4 {
   font-style: italic;
 }
 
+h5 {
+  font-size: 2.5vw;
+}
+
 h6 {
   font-size: 1.5vw;
 }
@@ -81,7 +85,7 @@ p {
   font-size: 1vw;
 }
 p i {
-  color: #72E3AF;
+  color: #2AD587;
 }
 
 .error {
@@ -92,6 +96,11 @@ p i {
   font-size: 1.9vw;
 }
 #aboutMe p a {
+  color: white;
+}
+
+footer p {
+  font-size: 1.3vw;
   color: white;
 }
 
@@ -130,6 +139,9 @@ button {
   #aboutMe p {
     font-size: 2.2vw;
   }
+  footer p {
+    font-size: 1.6vw;
+  }
   a {
     font-size: 1.6vw;
   }
@@ -161,6 +173,9 @@ button {
   }
   #aboutMe p {
     font-size: 2.4vw;
+  }
+  footer p {
+    font-size: 2vw;
   }
   a {
     font-size: 2vw;
@@ -197,6 +212,9 @@ button {
   }
   #aboutMe p {
     font-size: 3vw;
+  }
+  footer p {
+    font-size: 2.5vw;
   }
   a {
     font-size: 2.4vw;
@@ -379,6 +397,53 @@ button {
   }
   #contact form textarea {
     width: 45vw;
+  }
+}
+footer {
+  margin-top: 4vh;
+  background: #72E3AF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+footer i {
+  margin-top: 1vh;
+  font-size: 2.5vw;
+  color: white;
+  margin-bottom: 3vh;
+  cursor: pointer;
+}
+footer p {
+  margin: 0;
+}
+footer p i {
+  font-size: 1vw;
+  margin-left: 0.5vw;
+  cursor: auto;
+}
+
+@media (max-width: 992px) {
+  footer i {
+    font-size: 3.5vw;
+  }
+  footer p i {
+    font-size: 2vw;
+  }
+}
+@media (max-width: 768px) {
+  footer i {
+    font-size: 5vw;
+  }
+  footer p i {
+    font-size: 2.5vw;
+  }
+}
+@media (max-width: 560px) {
+  footer i {
+    font-size: 7vw;
+  }
+  footer p i {
+    font-size: 3.5vw;
   }
 }
 #home {
@@ -661,6 +726,16 @@ button {
 #contact article form button {
   margin-left: 3vw;
 }
+#contact #messageSent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+#contact #messageSent lottie-player {
+  width: 35vw;
+  height: 35vw;
+}
 
 @media (max-width: 992px) {
   #contact article div {
@@ -682,6 +757,9 @@ button {
   }
   #contact article div {
     display: none;
+  }
+  #contact #messageSent {
+    flex-direction: column;
   }
 }
 

@@ -2,7 +2,7 @@ import {ChangeDetectionStrategy, Component, Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {CreateMessage} from "../../application/CreateMessage";
-import { MessageService } from "./ContactSection.service";
+import {MessageService} from "./ContactSection.service";
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -13,24 +13,32 @@ import { MessageService } from "./ContactSection.service";
           <h3>Contact</h3>
           <hr>
         </header>
-        <article>
-          <div></div>
-          <form>
-            <input #name type="text" name="name" (change)="createMessageName(name.value)"
-                   placeholder="Full name">
-            <input #email type="text" name="email" (change)="createMessageEmail(email.value)" placeholder="Email">
-            <input #object type="text" name="object" (change)="createMessageObject(object.value)"
-                   placeholder="Object">
-            <textarea #content name="content" (change)="createMessageContent(content.value)"
-                      placeholder="Write your message."></textarea>
-            <button (click)="createCompleteMessage()"><span>Send message !</span></button>
-            <p class="error">{{componentValue.getGeneralError()}}</p>
-          </form>
-        </article>
+        <ng-container *ngIf="componentValue.getInsertedMessage() !== '1'">
+          <article>
+            <div></div>
+            <form>
+              <input #name type="text" name="name" (change)="createMessageName(name.value)"
+                     placeholder="Full name">
+              <input #email type="text" name="email" (change)="createMessageEmail(email.value)" placeholder="Email">
+              <input #object type="text" name="object" (change)="createMessageObject(object.value)"
+                     placeholder="Object">
+              <textarea #content name="content" (change)="createMessageContent(content.value)"
+                        placeholder="Write your message."></textarea>
+              <button (click)="createCompleteMessage()"><span>Send message !</span></button>
+              <p class="error">{{componentValue.getGeneralError()}}</p>
+            </form>
+          </article>
+        </ng-container>
+        <ng-container  *ngIf="componentValue.getInsertedMessage() === '1'">
+          <article id="messageSent">
+            <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_sllv8tia.json" background="transparent"
+                           speed="1" loop autoplay></lottie-player>
+            <h5>Your message has been successfully sent !</h5>
+          </article>
+        </ng-container>
       </section>
     `
 })
-
 
 
 @Injectable()
@@ -78,11 +86,12 @@ export class ContactSectionComponent {
                 content: this.componentValue.getContentMessage()
             };
             const jsonData = JSON.stringify(data);
-            this.messageService.addMessage(jsonData).subscribe(data => console.log("succes", data),
-                                                                error => console.log("oops", error));
+            this.messageService.addMessage(jsonData).subscribe(data => data,
+                error => this.componentValue.setGeneralError(error));
             this.componentValue.setGeneralError(undefined);
+            this.componentValue.setInsertedMessage("1");
         } else {
-            this.componentValue.setGeneralError("Please be sure to fill all the form cases.");
+            this.componentValue.setGeneralError("Please fill all the form cases.");
         }
     }
 
@@ -94,6 +103,7 @@ export class ContactSectionComponentValue {
                 private contentMessage: string,
                 private objectMessage: string,
                 private messageComplete: CreateMessage,
+                private insertedMessage?: string,
                 private generalError?: string) {
     }
 
@@ -141,6 +151,13 @@ export class ContactSectionComponentValue {
         this.generalError = error;
     }
 
+    getInsertedMessage() {
+        return this.insertedMessage;
+    }
+
+    setInsertedMessage(isInsert: string) {
+        this.insertedMessage = isInsert;
+    }
 }
 
 export interface MessageInt {

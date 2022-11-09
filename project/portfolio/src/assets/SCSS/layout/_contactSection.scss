@@ -20,6 +20,17 @@
       }
     }
   }
+  #messageSent{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    lottie-player{
+      width: 35vw;
+      height: 35vw;
+    }
+  }
 }
 
 @media(max-width: $md-screen){
@@ -56,6 +67,9 @@
       div{
         display: none;
       }
+    }
+    #messageSent{
+      flex-direction: column;
     }
   }
 }

@@ -22,8 +22,8 @@ import {ChangeDetectionStrategy, Component} from "@angular/core";
     }
 )
 export class HomeSectionComponent {
-    private projectSection: string = '#projectSection';
-    private contactSection: string= '#contact';
+    private projectSection = "#projectSection";
+    private contactSection = "#contact";
         discoverBtn(){
 
         window.location.href = (this.projectSection);

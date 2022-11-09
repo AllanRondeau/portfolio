@@ -9,10 +9,10 @@ import {TechsSectionComponent} from "./homePage/TechsSection";
 import {FormsModule} from "@angular/forms";
 import { ContactSectionComponent } from "./homePage/ContactSection.component";
 import {HttpClientModule} from "@angular/common/http";
-import {CreateMessage} from "../application/CreateMessage";
 import { AlertService } from "./alert.service";
 import { HttpErrorHandler } from "./errorHandler.service";
 import { MessageService } from "./homePage/ContactSection.service";
+import {FooterComponent} from "./homePage/Footer.component";
 
 
 
@@ -28,7 +28,8 @@ import { MessageService } from "./homePage/ContactSection.service";
         ProjectSectionComponent,
         AboutSectionComponent,
         TechsSectionComponent,
-        ContactSectionComponent
+        ContactSectionComponent,
+        FooterComponent,
     ],
     providers: [
         {provide: "AsyncProjectRepository", useClass: HttpProjectRepository},

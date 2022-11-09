@@ -14,6 +14,7 @@ import {DisplayProject} from "../application/DisplayProject";
                 <app-about-section></app-about-section>
                 <app-techs-section></app-techs-section>
                 <app-contact-section></app-contact-section>
+                <app-footer></app-footer>
               </main>
         `
     }
