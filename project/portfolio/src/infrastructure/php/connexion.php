@@ -1,6 +1,6 @@
 <?php
     #Fonction   appeler pour se connecter   la base de donn es
-    function connexionBdd() {
+    function connexionDb() {
         // Permet d'utiliser les variables d'identification pour la connexion
         require('config.php');
 

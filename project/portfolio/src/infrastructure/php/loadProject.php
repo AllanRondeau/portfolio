@@ -2,7 +2,7 @@
     header('Content-Type: application/json; charset=utf-8');
 
 include('connexion.php');
-$co = connexionBdd();
+$co = connexionDb();
 $arrayobj = [];
 
 $query = $co->prepare('SELECT * from project');
