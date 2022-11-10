@@ -1,0 +1,96 @@
+.navbarForComputers {
+  background: rgba(114, 227, 175, 0.65);
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  h4 {
+    margin-left: 3vw;
+    margin-right: 37vw;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  a {
+    cursor: pointer;
+    margin: 0 1.5vw;
+    font-weight: 700;
+    padding: 1vh;
+    border-radius: 10px;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      top: 5vh;
+      left: 0;
+      background-color: black;
+      transition: all .35s;
+    }
+
+    &:hover:after {
+      width: 100%;
+    }
+  }
+
+  .aNavbarActive {
+    color: white;
+    background: #2AD587;
+  }
+}
+.navbarForMobile{
+  display: none;
+}
+
+@media (max-width: $md-screen) {
+  .navbarForComputers{
+    h4{
+      margin-right: 25vw;
+    }
+  }
+}
+
+@media (max-width: $sm-screen){
+  .navbarForComputers{
+    h4{
+      margin-right: 10vw;
+    }
+    a{
+      margin: 0 0.75vw;
+    }
+    button{
+      margin-left: 2vw;
+    }
+  }
+}
+
+@media (max-width: $xs-screen){
+  .navbarForMobile{
+    display: flex;
+    flex-direction: column;
+
+    #navButton{
+      position: fixed;
+      top: 3vh;
+      right: 5vw;
+      font-size: 3vw;
+      width: 10vw;
+      height: 5vh;
+      background-color: $secondaryColor;
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      color: white;
+      border-radius: 10px;
+    }
+  }
+  .navbarForComputers{
+    display: none;
+  }
+}

@@ -9,6 +9,7 @@ import {DisplayProject} from "../application/DisplayProject";
         selector: "app-es-root",
         template: `
               <main>
+                <app-navbar></app-navbar>
                 <app-home-section></app-home-section>
                 <app-project-section></app-project-section>
                 <app-about-section></app-about-section>

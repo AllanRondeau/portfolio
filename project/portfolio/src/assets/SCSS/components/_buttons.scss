@@ -17,18 +17,19 @@ button {
     0 0 70px $secondaryColor, 0 0 80px $secondaryColor, 0 0 100px $secondaryColor, 0 0 150px $secondaryColor;
   }
 
-  #discoverBtn{
+  #discoverBtn {
     background-color: $secondaryColor;
     color: white;
-    border: 1px solid rgba(0,0,0,0.4);
+    border: 1px solid rgba(0, 0, 0, 0.4);
   }
-  #discoverBtn:hover{
+
+  #discoverBtn:hover {
     padding: 1.2vw;
   }
 }
 
-#contact{
-  button{
+#contact {
+  button {
     background-color: white;
     color: $secondaryColor;
     border: 1px solid $secondaryColor;
@@ -38,12 +39,12 @@ button {
     text-align: center;
     position: relative;
 
-    span{
+    span {
       position: relative;
       z-index: 2;
     }
 
-    &::after{
+    &::after {
       content: "";
       position: absolute;
       top: 0;
@@ -54,12 +55,43 @@ button {
       transition: all .35s;
     }
   }
-  button:hover{
+
+  button:hover {
     color: white;
   }
-  button:hover::after{
+
+  button:hover::after {
     width: 100%;
   }
 }
 
+.navbarForComputers button {
+  background-color: $primaryColor;
+  letter-spacing: 1px;
+  border: none;
+  width: 8vw;
+  height: 5vh;
+
+  &:hover {
+    width: 9vw;
+    height: 6vh;
+  }
+}
+@media(max-width: $md-screen){
+  .navbarForComputers{
+    button{
+      width: 11vw;
+      height: 5vh;
+    }
+  }
+}
+
+@media(max-width: $sm-screen){
+  .navbarForComputers{
+    button{
+      width: 13vw;
+      height: 4vh;
+    }
+  }
+}
 

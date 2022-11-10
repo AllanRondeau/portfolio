@@ -13,6 +13,7 @@ import { AlertService } from "./alert.service";
 import { HttpErrorHandler } from "./errorHandler.service";
 import { MessageService } from "./homePage/ContactSection.service";
 import {FooterComponent} from "./homePage/Footer.component";
+import {NavBarComponent} from "./homePage/NavBar.component";
 
 
 
@@ -24,6 +25,7 @@ import {FooterComponent} from "./homePage/Footer.component";
     ],
     declarations: [
         AppComponent,
+        NavBarComponent,
         HomeSectionComponent,
         ProjectSectionComponent,
         AboutSectionComponent,

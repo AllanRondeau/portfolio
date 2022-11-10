@@ -27,6 +27,15 @@ h4 {
   font-style: italic;
 }
 
+.navbarForComputers{
+  h4{
+    color: $secondaryColor;
+    font-size: font-size-adjust(20);
+    text-decoration: none;
+    font-style: normal;
+  }
+}
+
 h5{
   font-size: font-size-adjust(25);
 }
@@ -37,6 +46,11 @@ h6 {
 
 a {
   font-size: font-size-adjust(12);
+}
+.navbarForComputers{
+  a{
+    font-size: font-size-adjust(16);
+  }
 }
 
 select {
@@ -79,6 +93,13 @@ footer{
 button {
   font-size: font-size-adjust(15);
 }
+.navbarForComputers{
+  button{
+    font-size: font-size-adjust(16);
+    color: white;
+    text-decoration: underline $secondaryColor;
+  }
+}
 
 @media(max-width: $md-screen) {
   h1 {
@@ -90,7 +111,14 @@ button {
   h4 {
     font-size: font-size-adjust(17);
   }
-
+  .navbarForComputers{
+    a{
+      font-size: font-size-adjust(19);
+    }
+    h4{
+      font-size: font-size-adjust(24);
+    }
+  }
   h6 {
     font-size: font-size-adjust(17);
   }
@@ -108,11 +136,16 @@ button {
   button {
     font-size: font-size-adjust(17);
   }
+  .navbarForComputers{
+    button{
+      font-size: font-size-adjust(18);
+    }
+  }
   p {
     font-size: font-size-adjust(12);
   }
   #aboutMe p {
-    font-size: font-size-adjust(22);
+    font-size: font-size-adjust(21);
   }
   footer{
     p{
@@ -135,6 +168,14 @@ button {
   h4 {
     font-size: font-size-adjust(30);
   }
+  .navbarForComputers{
+    a{
+      font-size: font-size-adjust(23);
+    }
+    h4{
+      font-size: font-size-adjust(33);
+    }
+  }
 
   select {
     font-size: font-size-adjust(20);
@@ -149,6 +190,11 @@ button {
 
   article button {
     font-size: font-size-adjust(35);
+  }
+  .navbarForComputers{
+    button{
+      font-size: font-size-adjust(21);
+    }
   }
   p {
     font-size: font-size-adjust(15);
@@ -191,6 +237,7 @@ button {
   h4 {
     font-size: font-size-adjust(30);
   }
+
   article button {
     font-size: font-size-adjust(40);
   }

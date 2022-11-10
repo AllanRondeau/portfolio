@@ -42,7 +42,7 @@ h1 {
 }
 
 .titleMarker {
-  color: #72E3AF;
+  color: rgb(114, 227, 175);
   font-weight: 100;
 }
 
@@ -57,6 +57,13 @@ h4 {
   font-style: italic;
 }
 
+.navbarForComputers h4 {
+  color: #2AD587;
+  font-size: 2vw;
+  text-decoration: none;
+  font-style: normal;
+}
+
 h5 {
   font-size: 2.5vw;
 }
@@ -67,6 +74,10 @@ h6 {
 
 a {
   font-size: 1.2vw;
+}
+
+.navbarForComputers a {
+  font-size: 1.6vw;
 }
 
 select {
@@ -108,6 +119,12 @@ button {
   font-size: 1.5vw;
 }
 
+.navbarForComputers button {
+  font-size: 1.6vw;
+  color: white;
+  text-decoration: underline #2AD587;
+}
+
 @media (max-width: 992px) {
   h1 {
     font-size: 6.8vw;
@@ -117,6 +134,12 @@ button {
   }
   h4 {
     font-size: 1.7vw;
+  }
+  .navbarForComputers a {
+    font-size: 1.9vw;
+  }
+  .navbarForComputers h4 {
+    font-size: 2.4vw;
   }
   h6 {
     font-size: 1.7vw;
@@ -133,11 +156,14 @@ button {
   button {
     font-size: 1.7vw;
   }
+  .navbarForComputers button {
+    font-size: 1.8vw;
+  }
   p {
     font-size: 1.2vw;
   }
   #aboutMe p {
-    font-size: 2.2vw;
+    font-size: 2.1vw;
   }
   footer p {
     font-size: 1.6vw;
@@ -156,6 +182,12 @@ button {
   h4 {
     font-size: 3vw;
   }
+  .navbarForComputers a {
+    font-size: 2.3vw;
+  }
+  .navbarForComputers h4 {
+    font-size: 3.3vw;
+  }
   select {
     font-size: 2vw;
   }
@@ -167,6 +199,9 @@ button {
   }
   article button {
     font-size: 3.5vw;
+  }
+  .navbarForComputers button {
+    font-size: 2.1vw;
   }
   p {
     font-size: 1.5vw;
@@ -254,7 +289,7 @@ header {
 hr {
   width: 10vw;
   height: 2px;
-  background-color: #72E3AF;
+  background-color: rgb(114, 227, 175);
   margin-bottom: 2vh;
 }
 
@@ -311,8 +346,32 @@ button {
   width: 100%;
 }
 
+.navbarForComputers button {
+  background-color: rgb(114, 227, 175);
+  letter-spacing: 1px;
+  border: none;
+  width: 8vw;
+  height: 5vh;
+}
+.navbarForComputers button:hover {
+  width: 9vw;
+  height: 6vh;
+}
+
+@media (max-width: 992px) {
+  .navbarForComputers button {
+    width: 11vw;
+    height: 5vh;
+  }
+}
+@media (max-width: 768px) {
+  .navbarForComputers button {
+    width: 13vw;
+    height: 4vh;
+  }
+}
 #home header {
-  border: 2px solid #72E3AF;
+  border: 2px solid rgb(114, 227, 175);
   transform: skew(-15deg);
 }
 
@@ -379,14 +438,14 @@ button {
 #contact form input {
   margin: 5vh 3vw;
   border: none;
-  border-bottom: 2px solid #72E3AF;
+  border-bottom: 2px solid rgb(114, 227, 175);
   width: 20vw;
 }
 #contact form textarea {
   width: 23vw;
   height: 15vh;
   margin-left: 2vw;
-  border: 2px solid #72E3AF;
+  border: 2px solid rgb(114, 227, 175);
   border-radius: 10px;
 }
 
@@ -514,7 +573,7 @@ footer p i {
     margin-top: 32vh;
     margin-left: 7vw;
     color: #ffffff;
-    background-color: #72E3AF;
+    background-color: rgb(114, 227, 175);
     text-align: center;
     text-decoration: none;
   }
@@ -668,7 +727,7 @@ footer p i {
   background: white;
   position: relative;
   top: -2.3vh;
-  border: 2px solid #72E3AF;
+  border: 2px solid rgb(114, 227, 175);
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
@@ -760,6 +819,91 @@ footer p i {
   }
   #contact #messageSent {
     flex-direction: column;
+  }
+}
+.navbarForComputers {
+  background: rgba(114, 227, 175, 0.65);
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.navbarForComputers h4 {
+  margin-left: 3vw;
+  margin-right: 37vw;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.navbarForComputers a {
+  cursor: pointer;
+  margin: 0 1.5vw;
+  font-weight: 700;
+  padding: 1vh;
+  border-radius: 10px;
+  position: relative;
+}
+.navbarForComputers a:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  top: 5vh;
+  left: 0;
+  background-color: black;
+  transition: all 0.35s;
+}
+.navbarForComputers a:hover:after {
+  width: 100%;
+}
+.navbarForComputers .aNavbarActive {
+  color: white;
+  background: #2AD587;
+}
+
+.navbarForMobile {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .navbarForComputers h4 {
+    margin-right: 25vw;
+  }
+}
+@media (max-width: 768px) {
+  .navbarForComputers h4 {
+    margin-right: 10vw;
+  }
+  .navbarForComputers a {
+    margin: 0 0.75vw;
+  }
+  .navbarForComputers button {
+    margin-left: 2vw;
+  }
+}
+@media (max-width: 560px) {
+  .navbarForMobile {
+    display: flex;
+    flex-direction: column;
+  }
+  .navbarForMobile #navButton {
+    position: fixed;
+    top: 3vh;
+    right: 5vw;
+    font-size: 3vw;
+    width: 10vw;
+    height: 5vh;
+    background-color: #2AD587;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 10px;
+  }
+  .navbarForComputers {
+    display: none;
   }
 }
 
