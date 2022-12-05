@@ -1,4 +1,23 @@
 #projectSection {
+
+  #loading{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    lottie-player{
+      width: 25vw;
+      height: 25vw;
+    }
+  }
+
   @extend %displayFlexColumn;
   margin-bottom: 2vh;
 

@@ -35,6 +35,14 @@ h4 {
     font-style: normal;
   }
 }
+#navbarMenu{
+  h4{
+    font-size: font-size-adjust(90);
+  }
+  a{
+    font-size: font-size-adjust(50);
+  }
+}
 
 h5{
   font-size: font-size-adjust(25);

@@ -12,7 +12,7 @@ import {ChangeDetectionStrategy, Component} from "@angular/core";
                 <button (click)="contactBtn()" type="button" name="contactHomeLink" id="contactHomeBtn"> Contact me!</button>
                 <button (click)="discoverBtn()" type="button" name="discoverHomeLink" id="discoverBtn"> Discover my portfolio</button>
               </form>
-              <a href="https://github.com/AllanRondeau" target="blank">Watch few projects on my github</a>
+              <a href="https://github.com/AllanRondeau" target="blank">Few projects on my github</a>
             </article>
             <article>
               <figure></figure>

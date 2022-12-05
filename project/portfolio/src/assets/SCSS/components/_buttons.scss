@@ -77,6 +77,26 @@ button {
     height: 6vh;
   }
 }
+
+.navbarForMobile #navbarMenu a{
+  letter-spacing: 2px;
+}
+
+.navbarForMobile #navbarMenu button{
+  background-color: $primaryColor;
+  letter-spacing: 1px;
+  border: none;
+  width: 20vw;
+  height: 5vh;
+  color: white;
+  text-decoration: underline 1px solid $secondaryColor;
+
+  &:hover {
+    width: 9vw;
+    height: 6vh;
+  }
+}
+
 @media(max-width: $md-screen){
   .navbarForComputers{
     button{

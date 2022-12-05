@@ -6,22 +6,22 @@ import {BehaviorSubject} from "rxjs";
         selector: "app-navbar",
         template: `
           <nav class="navbarForComputers">
-            <h4>Portfolio</h4>
-            <a>Projects</a>
-            <a>About me</a>
-            <a>Skills</a>
-            <a>Contact</a>
+            <h4 (click)="goToSection('#home')">Portfolio</h4>
+            <a (click)="goToSection('#projectSection')">Projects</a>
+            <a (click)="goToSection('#aboutMe')">About me</a>
+            <a (click)="goToSection('#techs')">Skills</a>
+            <a (click)="goToSection('#contact')">Contact</a>
             <button>Sign in</button>
           </nav>
           <nav class="navbarForMobile">
             <button id="navButton" (click)="isDisplayedMenu()"><i class="fa-solid fa-arrow-down-short-wide"></i></button>
             <ng-container *ngIf="getStateNavbarMenu() === true">
               <article id="navbarMenu">
-                <h4>Portfolio</h4>
-                <a>Projects</a>
-                <a>About me</a>
-                <a>Skills</a>
-                <a>Contact</a>
+                <h4 (click)="goToSection('#home')" >Portfolio</h4>
+                <a (click)="goToSection('#projectSection')">Projects</a>
+                <a (click)="goToSection('#aboutMe')">About me</a>
+                <a (click)="goToSection('#techs')">Skills</a>
+                <a (click)="goToSection('#contact')">Contact</a>
                 <button>Sign in</button>
               </article>
             </ng-container>
@@ -43,6 +43,10 @@ export class NavBarComponent {
 
     getStateNavbarMenu() {
         return this.isOpenNavbarMenu;
+    }
+
+    goToSection(section: string){
+        window.location.href = (section)
     }
 }
 

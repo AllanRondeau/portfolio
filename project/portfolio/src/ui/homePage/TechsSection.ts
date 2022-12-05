@@ -22,7 +22,7 @@ import {ChangeDetectionStrategy, Component} from "@angular/core";
             </div>
             <article>
               <h6>HTML & CSS</h6>
-              <p>Started to learn it since <span>september 2021</span>. Those language were the first instructed in my developpement
+              <p>Started to learn it since <span>september 2021</span>. Those languages were the first instructed in my developpement
                 degree. </p>
             </article>
           </div>
@@ -104,8 +104,8 @@ import {ChangeDetectionStrategy, Component} from "@angular/core";
 export class TechsSectionComponent {
     selectedTechs = "front";
     options = [
-        {name: "front-end technologies", value: "front", selected: "selected"},
-        {name: "back-end technologies", value: "back", selected: ""},
+        {name: "Front-end technologies", value: "front", selected: "selected"},
+        {name: "Back-end technologies", value: "back", selected: ""},
         {name: "Frameworks", value: "framework", selected: ""}
     ];
 

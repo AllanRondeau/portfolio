@@ -1,43 +1,47 @@
-import {ChangeDetectionStrategy, Component, Inject} from "@angular/core";
+import {ChangeDetectionStrategy, Component, EventEmitter, Inject, Output} from "@angular/core";
 import {AsyncProjectRepository} from "../../application/AsyncProjectRepository";
 import {DisplayProject} from "../../application/DisplayProject";
-import {BehaviorSubject} from "rxjs";
-import {animate, transition } from "@angular/animations";
+import {BehaviorSubject, Observable} from "rxjs";
+import {animate, transition} from "@angular/animations";
 
 @Component({
         changeDetection: ChangeDetectionStrategy.OnPush,
         selector: "app-project-section",
         template: `
           <section id="projectSection">
-            <ng-container *ngIf="projectComponentState |async as projectState">
+            <ng-container *ngIf="projectComponentState | async as projectState">
+              <div *ngIf = "projectState.isLoading == true" id="loading">
+                <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_poqmycwy.json"  background="transparent"  speed="1"  
+                                loop  autoplay></lottie-player>
+              </div>
               <ng-container *ngIf="projectState.projectOnPage as projectOnHomePage">
-                <header>
-                  <h3>My Projects</h3>
-                  <hr>
-                </header>
-                <div *ngIf="projectState.error == true else errorOk">An error occured while fetching datas. Please try again.</div>
-                <ng-template #errorOk>
-                  <article id="projectBox">
-                    <ng-container *ngFor="let p of projectOnHomePage.projects ; let i = index">
-                      <article class="projects">
-                        <article>
-                          <img src="{{p.filePathImage}}" alt="">
-                          <h4>{{p.projectTitle}}</h4>
-                          <button [attr.id]="'DetailsBtn'+i" (click)="showDetailsBtn(i)" *ngIf="showDetails != i">See more
-                          </button>
+                  <header>
+                    <h3>My Projects</h3>
+                    <hr>
+                  </header>
+                  <div *ngIf="projectState.error == true else errorOk">An error occured while fetching datas. Please try again.</div>
+                  <ng-template #errorOk>
+                    <article id="projectBox">
+                      <ng-container *ngFor="let p of projectOnHomePage.projects ; let i = index">
+                        <article class="projects">
+                          <article>
+                            <img src="{{p.filePathImage}}" alt="">
+                            <h4>{{p.projectTitle}}</h4>
+                            <button [attr.id]="'DetailsBtn'+i" (click)="showDetailsBtn(i)" *ngIf="showDetails != i">See more
+                            </button>
+                          </article>
+                          <article class="projectDetails" *ngIf="showDetails===i">
+                            <p>Date project:<i>{{p.projectStartDate}} - {{p.projectEndDate}}</i></p>
+                            <p>Techs used: <i>{{p.projectTechnology}}</i></p>
+                            <p>{{p.projectSummary}}</p>
+                            <button (click)="hookDetailsBtn()">Close</button>
+                          </article>
                         </article>
-                        <article class="projectDetails" *ngIf="showDetails===i" >
-                          <p>Date project:<i>{{p.projectStartDate}} - {{p.projectEndDate}}</i></p>
-                          <p>Techs used: <i>{{p.projectTechnology}}</i></p>
-                          <p>{{p.projectSummary}}</p>
-                          <button (click)="hookDetailsBtn()">Close</button>
-                        </article>
-                      </article>
-                    </ng-container>
-                  </article>
-                </ng-template>
+                      </ng-container>
+                    </article>
+                  </ng-template>
+                </ng-container>
               </ng-container>
-            </ng-container>
           </section>
         `
     }
@@ -53,6 +57,13 @@ export class ProjectSectionComponent {
         )
     );
 
+
+    @Output() newItemEvent = new EventEmitter<boolean>();
+
+    addNewItem(value: boolean) {
+        this.newItemEvent.emit(value);
+    }
+
     constructor(@Inject("AsyncProjectRepository") private projectRepository: AsyncProjectRepository) {
         // Recover datas from a promise once it load
         Promise.all([
@@ -65,7 +76,7 @@ export class ProjectSectionComponent {
                         projects
                     ),
                     undefined,
-                        false
+                    false
                 )
             );
             // for developper logs
@@ -86,6 +97,7 @@ export class ProjectSectionComponent {
 
     }
 
+
     showDetails = -1;
 
     showDetailsBtn(index: number) {
@@ -98,6 +110,11 @@ export class ProjectSectionComponent {
 
 }
 
+const loading = new Observable((observer) => {
+        let loading: boolean;
+    }
+);
+
 export class ProjectComponentState {
 
     constructor(readonly isLoading: boolean,
@@ -106,6 +123,9 @@ export class ProjectComponentState {
                 readonly error?: boolean) {
     }
 
+    getLoading() {
+        return this.isLoading;
+    }
 }
 
 

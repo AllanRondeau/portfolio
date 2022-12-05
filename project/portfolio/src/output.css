@@ -64,6 +64,13 @@ h4 {
   font-style: normal;
 }
 
+#navbarMenu h4 {
+  font-size: 9vw;
+}
+#navbarMenu a {
+  font-size: 5vw;
+}
+
 h5 {
   font-size: 2.5vw;
 }
@@ -269,6 +276,7 @@ body {
   width: 100vw;
   height: 100%;
   overflow-x: hidden;
+  z-index: 1;
 } /*remove default margin*/
 main {
   display: flex;
@@ -354,6 +362,24 @@ button {
   height: 5vh;
 }
 .navbarForComputers button:hover {
+  width: 9vw;
+  height: 6vh;
+}
+
+.navbarForMobile #navbarMenu a {
+  letter-spacing: 2px;
+}
+
+.navbarForMobile #navbarMenu button {
+  background-color: rgb(114, 227, 175);
+  letter-spacing: 1px;
+  border: none;
+  width: 20vw;
+  height: 5vh;
+  color: white;
+  text-decoration: underline 1px solid #2AD587;
+}
+.navbarForMobile #navbarMenu button:hover {
   width: 9vw;
   height: 6vh;
 }
@@ -603,6 +629,22 @@ footer p i {
 #projectSection {
   margin-bottom: 2vh;
 }
+#projectSection #loading {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#projectSection #loading lottie-player {
+  width: 25vw;
+  height: 25vw;
+}
 #projectSection header {
   text-align: center;
   margin-top: 3vh;
@@ -680,8 +722,8 @@ footer p i {
     flex-basis: unset;
   }
   #aboutMe div #profilePic {
-    width: 40vw;
-    height: 15vh;
+    width: 35vw;
+    height: 20vh;
   }
   #aboutMe div article {
     margin: 0;
@@ -693,8 +735,12 @@ footer p i {
     margin-top: 5vh;
   }
 }
+#techs {
+  margin-top: 8vh;
+}
 #techs aside select {
   margin-left: 20vw;
+  margin-top: 5vh;
 }
 #techs article {
   margin-bottom: 5vh;
@@ -890,8 +936,28 @@ footer p i {
     display: flex;
     flex-direction: column;
   }
+  .navbarForMobile #navbarMenu {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+    background: rgba(114, 227, 175, 0.95);
+    padding: 10vh 0 4vh 0;
+    z-index: 2;
+    position: fixed;
+  }
+  .navbarForMobile #navbarMenu h4 {
+    margin-bottom: 5vh;
+  }
+  .navbarForMobile #navbarMenu a {
+    margin-bottom: 3vh;
+  }
+  .navbarForMobile #navbarMenu button {
+    margin-top: 2vh;
+  }
   .navbarForMobile #navButton {
     position: fixed;
+    z-index: 3;
     top: 3vh;
     right: 5vw;
     font-size: 3vw;
