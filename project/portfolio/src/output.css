@@ -450,7 +450,7 @@ button {
   background-color: #2AD587;
 }
 #projectSection .projects .projectDetails {
-  transition: all 0.35s ease 0.35s;
+  padding: 1vw;
 }
 
 @media (max-width: 560px) {
@@ -742,11 +742,14 @@ footer p i {
   margin-left: 20vw;
   margin-top: 5vh;
 }
+#techs .techWrapper {
+  margin-left: 10vw;
+}
 #techs article {
   margin-bottom: 5vh;
 }
 #techs article div {
-  width: 27vw;
+  width: 22vw;
   align-items: center;
 }
 #techs article div img {

@@ -12,7 +12,8 @@ const httpOptions = {
 
 @Injectable()
 export class MessageService{
-    private messageUrl = "backend_v2/portfolio_angular_cli/project/portfolio/src/infrastructure/php/insertMessage.php";
+    // private messageUrl = "backend_v2/portfolio_angular_cli/project/portfolio/src/infrastructure/php/insertMessage.php";
+    private messageUrl = "infrastructure/php/insertMessage.php";
     private handleError: HandleError;
     constructor(private http: HttpClient,
                 httpErrorHandler: HttpErrorHandler){

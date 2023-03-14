@@ -4,13 +4,16 @@
     margin-left: 20vw;
     margin-top: 5vh;
   }
+  .techWrapper{
+    margin-left: 10vw;
+  }
 
   article {
     @extend %displayFlexRow;
     margin-bottom: 5vh;
 
     div {
-      width: 27vw;
+      width: 22vw;
       align-items: center;
 
       img {

@@ -27,8 +27,9 @@
             "tsConfig": "project/portfolio/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "project/portfolio/src/favicon.ico",
-              "project/portfolio/src/assets"
+              "project/portfolio/src/assets/",
+              "project/portfolio/src/infrastructure/php",
+              "project/portfolio/src/output.css"
             ],
             "styles": [
               "project/portfolio/src/styles.scss"
@@ -95,8 +96,9 @@
             "karmaConfig": "project/portfolio/karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "project/portfolio/src/favicon.ico",
-              "project/portfolio/src/assets"
+              "http://localhost/backend_v2/portfolio_angular_cli/dist/portfolio/project/portfolio/src/assets",
+              "project/portfolio/src/infrastructure/php",
+              "project/portfolio/src/output.css"
             ],
             "styles": [
               "project/portfolio/src/styles.scss"
